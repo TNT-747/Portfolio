@@ -15,7 +15,7 @@ const Footer = () => {
                 className="h-10 w-10 mr-2"
               />
               <span className="text-2xl font-bold">
-                <span className="text-primary">KASSIMI</span> <span className="text-dark dark:text-light">Portfolio</span>
+                <span className="text-primary">ASSIMI</span> <span className="text-dark dark:text-light">Portfolio</span>
               </span>
             </Link>
             <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-md">
