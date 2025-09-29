@@ -12,60 +12,63 @@ interface Project {
 }
 
 const Projects = () => {
-  // User's actual projects
+  // User's actual projects from CV & PFE
   const projects: Project[] = [
     {
       id: 1,
-      title: "Java OOP Project - Dental Office Management",
-      description: "Development of a dental office management system with complete patient tracking, appointment scheduling, and billing features.",
+      title: "Dental Clinic Management System",
+      description: "Desktop system for managing patient records, appointments, and billing using Java Swing and UML.",
       tags: ["Java", "Swing", "UML", "Maven", "IntelliJ IDEA"],
-      period: "December 2024 - January 2025",
+      period: "December 2024 – January 2025",
       github: "https://github.com/kassi-12/dental-office-java"
     },
     {
       id: 2,
-      title: "ASP.NET Core MVC Project - Dental Office Management",
-      description: "Web-based dental office management system with modern architecture and responsive UI.",
-      tags: ["C#", "ReactJS", "SQL", "MVC", "SSMS", "Visual Studio"],
-      period: "December 2024 - January 2025",
-      github: "https://github.com/kassi-12/dental-office-aspnet"
+      title: "Restaurant Management System",
+      description: "Management platform built with ASP.NET and React for handling orders, inventory, and user interaction.",
+      tags: ["ASP.NET", "React.js", "SQL", "MVC", "SSMS"],
+      period: "December 2024 – January 2025",
+      github: "https://github.com/kassi-12/restaurant-management"
     },
     {
       id: 3,
-      title: "Restaurant Management System (PFA)",
-      description: "Complete restaurant management system with order tracking, inventory management, and reporting features.",
-      tags: ["Python", "Django", "SQLite", "Tkinter", "VS Code"],
-      period: "May 2024 - June 2024",
+      title: "Restaurant Management with Python & Eel",
+      description: "Lightweight restaurant system with Python and Eel for desktop-based management of orders and menus.",
+      tags: ["Python", "Eel", "SQLite"],
+      period: "May 2024 – July 2024",
       github: "https://github.com/kassi-12/restaurant-management"
     },
     {
       id: 4,
-      title: "Android Bus Ticket Application",
-      description: "Mobile app for managing and booking bus tickets with features for user accounts, seat selection, payment processing, and ticket confirmation.",
-      tags: ["Java", "Android", "XML", "SQLite", "Android Studio"],
-      period: "April 2024 - May 2024",
-      github: "https://github.com/kassi-12/android-bus-ticket"
+      title: "Banking Management System",
+      description: "Java Spring application to manage accounts, clients, and transactions in a simulated banking environment.",
+      tags: ["Java", "Spring Boot", "Hibernate", "SQL"],
+      period: "June 2025 – June 2025",
+      github: "https://github.com/kassi-12/banking-system"
     },
     {
       id: 5,
-      title: "Bill Management",
-      description: "C++ application for invoice management with classes for Product, Client, Invoice; includes data persistence and calculation features.",
-      tags: ["C++", "OOP", "Data Persistence"],
-      github: "https://github.com/kassi-12/bill-management"
+      title: "E-Commerce Platform",
+      description: "Full-featured e-commerce website with product listing, cart, and order management built using Java Spring Boot.",
+      tags: ["Java", "Spring Boot", "Thymeleaf", "SQL"],
+      period: "May 2025 – July 2025",
+      github: "https://github.com/kassi-12/ecommerce-platform"
     },
     {
       id: 6,
-      title: "Finger Vein Biometric Identification with Fused CNNs",
-      description: "Biometric identification system using advanced CNN architecture for secure authentication through finger vein patterns.",
-      tags: ["CNNs", "Biometrics", "Machine Learning", "Security"],
-      github: "https://github.com/kassi-12/finger-vein-biometric"
+      title: "Cloud CDN with Azure",
+      description: "Configuration and deployment of a Content Delivery Network (CDN) using Microsoft Azure services.",
+      tags: ["Azure", "Cloud", "CDN", "Networking"],
+      period: "May 2025 – May 2025",
+      github: "https://github.com/kassi-12/cloud-cdn-azure"
     },
     {
       id: 7,
-      title: "Gestion des Parcs de Jeux",
-      description: "C++ amusement park management system using object-oriented programming, with features for game tracking and CSV export.",
-      tags: ["C++", "OOP", "CSV Export", "Management System"],
-      github: "https://github.com/kassi-12/park-management"
+      title: "Virtualization with Master/Slave Communication",
+      description: "Design and deployment of a virtualized infrastructure with master/slave communication using VMware.",
+      tags: ["Virtualization", "VMware", "Networking"],
+      period: "May 2025 – May 2025",
+      github: "https://github.com/kassi-12/virtualization-project"
     }
   ];
 
@@ -166,4 +169,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;
