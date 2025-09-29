@@ -95,19 +95,20 @@ const Resume = () => {
         },
         {
           degree: "Digital Infrastructure, Systems and Networks",
-          institution: "ISTA NTIC, Beni Mellal",
+          institution: "Specialized Institute Of Applied Technology NTIC NTIC, Beni Mellal",
           period: "April 2023 – May 2023"
         },
-        {
-          degree: "Computer and Network Maintenance",
-          institution: "ISTA NTIC, Beni Mellal",
-          period: "September 2019 – July 2021"
-        },
-        {
+         {
           degree: "Bachelor's Degree, Computer and Network Maintenance",
           institution: "Mohamed V Technical High School, Beni Mellal",
           period: "September 2020 – July 2021"
+        },
+        {
+          degree: "Computer and Network Maintenance",
+          institution: "Specialized Institute Of Applied Technology NTIC NTIC, Beni Mellal",
+          period: "September 2019 – July 2021"
         }
+       
       ]
     },
     experience: {
@@ -115,7 +116,7 @@ const Resume = () => {
       items: [
         {
           position: "Web Developer Intern",
-          company: "Agence du Bassin Hydraulique de l'Oum Er Rbia, Beni Mellal",
+          company: "Hydraulic Basin Agency of Oum Er-Rbia, Beni Mellal",
           period: "August 2025 – September 2025",
           responsibilities: [
             "Developed a web application with interactive mapping and real-time tracking using Django and React",
@@ -124,7 +125,7 @@ const Resume = () => {
         },
         {
           position: "Web Developer Intern",
-          company: "ENCG Beni Mellal",
+          company: "National School of Commerce and Management, Beni Mellal",
           period: "August 2024 – September 2024",
           responsibilities: [
             "Developed and improved a slot & schedule management platform",
@@ -133,7 +134,7 @@ const Resume = () => {
         },
         {
           position: "System Administrator Intern",
-          company: "Agence du Bassin Hydraulique de l'Oum Er Rbia, Beni Mellal",
+          company: "Hydraulic Basin Agency of Oum Er-Rbia, Beni Mellal",
           period: "April 2022 – May 2022",
           responsibilities: [
             "Resolved a critical incident on the main server",
@@ -170,24 +171,7 @@ const Resume = () => {
     projects: {
       title: "Academic Projects",
       items: [
-        {
-          title: "Dental Office Management System (Desktop)",
-          period: "Dec 2024 – Jan 2025",
-          description: "Management system for a dental office",
-          technologies: "Java, Swing"
-        },
-        {
-          title: "Restaurant Management System",
-          period: "Dec 2024 – Jan 2025",
-          description: "Restaurant management system",
-          technologies: "ASP.NET, React"
-        },
-        {
-          title: "Restaurant Management System",
-          period: "May 2024 – Jul 2024",
-          description: "Restaurant management system",
-          technologies: "Python, Eel"
-        },
+       
         {
           title: "Banking Management System",
           period: "Jun 2025",
@@ -209,6 +193,24 @@ const Resume = () => {
           title: "Virtualization with Master/Slave Communication",
           period: "May 2025",
           description: "Virtualized infrastructure with Master/Slave communication"
+        },
+         {
+          title: "Dental Office Management System (Desktop)",
+          period: "Dec 2024 – Jan 2025",
+          description: "Management system for a dental office",
+          technologies: "Java, Swing"
+        },
+        {
+          title: "Restaurant Management System",
+          period: "Dec 2024 – Jan 2025",
+          description: "Restaurant management system",
+          technologies: "ASP.NET, React"
+        },
+        {
+          title: "Restaurant Management System",
+          period: "May 2024 – Jul 2024",
+          description: "Restaurant management system",
+          technologies: "Python, Eel"
         }
       ]
     },
@@ -262,12 +264,12 @@ const Resume = () => {
         },
         {
           degree: "Diplôme en Infrastructure Digitale, Option Systèmes et Réseaux",
-          institution: "ISTA NTIC, Beni Mellal",
+          institution: "Institut Specialise de Technologie Appliquee NTIC, Beni Mellal",
           period: "Avril 2023 – Mai 2023"
         },
         {
           degree: "Maintenance Informatique et Réseaux",
-          institution: "ISTA NTIC, Beni Mellal",
+          institution: "Institut Specialise de Technologie Appliquee NTIC, Beni Mellal",
           period: "Septembre 2019 – Juillet 2021"
         },
         {
@@ -291,7 +293,7 @@ const Resume = () => {
         },
         {
           position: "Stagiaire Développeur Web",
-          company: "ENCG Beni Mellal",
+          company: "Ecole Nationale de Commerce et de Gestion, Beni Mellal",
           period: "Août 2024 – Septembre 2024",
           responsibilities: [
             "Développement et amélioration d’une plateforme de gestion des créneaux et emplois du temps",
@@ -337,24 +339,7 @@ const Resume = () => {
     projects: {
       title: "Projets Académiques",
       items: [
-        {
-          title: "Application de Gestion d’un Cabinet Dentaire (Desktop)",
-          period: "Déc 2024 – Jan 2025",
-          description: "Système de gestion d’un cabinet dentaire",
-          technologies: "Java, Swing"
-        },
-        {
-          title: "Système de Gestion de Restaurant",
-          period: "Déc 2024 – Jan 2025",
-          description: "Système de gestion de restaurant",
-          technologies: "ASP.NET, React"
-        },
-        {
-          title: "Système de Gestion de Restaurant",
-          period: "Mai 2024 – Juil 2024",
-          description: "Système de gestion de restaurant",
-          technologies: "Python, Eel"
-        },
+        
         {
           title: "Système de Gestion Bancaire",
           period: "Juin 2025",
@@ -376,6 +361,24 @@ const Resume = () => {
           title: "Virtualisation avec Communication Master/Slave",
           period: "Mai 2025",
           description: "Infrastructure virtualisée avec communication Master/Slave"
+        },
+        {
+          title: "Application de Gestion d’un Cabinet Dentaire (Desktop)",
+          period: "Déc 2024 – Jan 2025",
+          description: "Système de gestion d’un cabinet dentaire",
+          technologies: "Java, Swing"
+        },
+        {
+          title: "Système de Gestion de Restaurant",
+          period: "Déc 2024 – Jan 2025",
+          description: "Système de gestion de restaurant",
+          technologies: "ASP.NET, React"
+        },
+        {
+          title: "Système de Gestion de Restaurant",
+          period: "Mai 2024 – Juil 2024",
+          description: "Système de gestion de restaurant",
+          technologies: "Python, Eel"
         }
       ]
     },
