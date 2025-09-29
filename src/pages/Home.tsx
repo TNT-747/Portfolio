@@ -16,7 +16,7 @@ const Home = () => {
               Hi, I'm <span className="text-primary">Abderrahmane KASSIMI</span>
             </h1>
             <p className="text-xl mb-8 text-gray-600 dark:text-gray-300">
-              Final Year Software Engineering Student | PFE Internship Seeker
+              Final Year Project (PFE) Internship Seeker | Software Engineering • DevOps
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4">
               <motion.div
