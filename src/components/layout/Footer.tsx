@@ -19,7 +19,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-md">
-              Software Engineer specialized in Windows/Linux Server Administration, Network/Cloud Management, and IT Support.
+             Final Year Software Engineering Student | PFE Internship Seeker
             </p>
             <div className="flex space-x-4 mt-6">
               <a
@@ -94,7 +94,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className="text-gray-600 dark:text-gray-300">Beni Mellal, Morocco</span>
+                <span className="text-gray-600 dark:text-gray-300">Rabat, Morocco</span>
               </li>
               <li className="flex items-start">
                 <svg className="h-5 w-5 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
