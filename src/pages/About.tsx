@@ -104,15 +104,15 @@ const About = () => {
               </div>
 
               <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">Web Developer Intern – ENCG Beni Mellal</h3>
-                <p className="text-gray-500 dark:text-gray-400">Aug 2024 - Sep 2024 | Morocco</p>
+                <h3 className="text-xl font-bold">Web Developer Intern – National School of Commerce and Management</h3>
+                <p className="text-gray-500 dark:text-gray-400">Aug 2024 - Sep 2024 | Beni Mellal, Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   Developed a scheduling and timetable management platform with dynamic UI and optimized database performance.
                 </p>
               </div>
 
               <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">System Administrator Intern – Agence du Bassin Hydraulique</h3>
+                <h3 className="text-xl font-bold">System Administrator Intern – Agence du Bassin Hydraulique de l'Oum Er-Rbia</h3>
                 <p className="text-gray-500 dark:text-gray-400">Apr 2023 | Béni Mellal, Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   Resolved RAID 5 server failure on HP ProLiant DL380 G7, restored availability, and implemented a backup solution.
@@ -120,15 +120,15 @@ const About = () => {
               </div>
 
               <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">Network Maintenance Intern – Institut Spécialisé des Arts Traditionnels</h3>
-                <p className="text-gray-500 dark:text-gray-400">Apr 2023 | Morocco</p>
+                <h3 className="text-xl font-bold">Network Maintenance Intern – Specialized Institute of Traditional Arts</h3>
+                <p className="text-gray-500 dark:text-gray-400">Apr 2023 | Beni Mellal, Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   Installed and configured network printers and managed user access.
                 </p>
               </div>
 
               <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">Administrative Assistant Intern – ISTA NTIC</h3>
+                <h3 className="text-xl font-bold">Administrative Assistant Intern – Specialized Institute Of Applied Technology NTIC</h3>
                 <p className="text-gray-500 dark:text-gray-400">Jul 2022 - Sep 2022 | Beni Mellal, Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   Handled registration processes, updated databases, and provided trainee support.
@@ -156,7 +156,7 @@ const About = () => {
               </div>
 
               <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">ISTA NTIC</h3>
+                <h3 className="text-xl font-bold">Specialized Institute Of Applied Technology NTIC</h3>
                 <p className="text-gray-500 dark:text-gray-400">Associate’s Degree – Digital Infrastructure Systems & Networks | 2021 - 2023</p>
               </div>
 
