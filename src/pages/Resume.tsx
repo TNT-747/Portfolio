@@ -74,7 +74,9 @@ const Resume = () => {
     }
   };
 
+  // =========================
   // English content
+  // =========================
   const englishContent: ContentType = {
     title: "My Resume",
     downloadBtn: "Download Resume (PDF)",
@@ -83,33 +85,28 @@ const Resume = () => {
       items: [
         {
           degree: "Engineer's Degree, Computer and Network Engineering",
-          institution: "Ecole Marocaine des Sciences de l'Ingénieur",
-          period: "October 2023 - Present"
+          institution: "Ecole Marocaine des Sciences de l'Ingénieur, Rabat",
+          period: "October 2023 – Present"
         },
         {
           degree: "Software Engineering",
           institution: "ALX Academy",
-          period: "August 2023 - March 2025"
+          period: "August 2023 – March 2025"
         },
         {
           degree: "Digital Infrastructure, Systems and Networks",
-          institution: "Specialized Institute Of Applied Technology NTIC",
-          period: "April 2023 - May 2023"
+          institution: "ISTA NTIC, Beni Mellal",
+          period: "April 2023 – May 2023"
         },
         {
           degree: "Computer and Network Maintenance",
-          institution: "Specialized Institute Of Applied Technology NTIC",
-          period: "September 2019 - July 2021"
+          institution: "ISTA NTIC, Beni Mellal",
+          period: "September 2019 – July 2021"
         },
         {
           degree: "Bachelor's Degree, Computer and Network Maintenance",
-          institution: "Mohamed V Technical High School",
-          period: "September 2018 - July 2021"
-        },
-        {
-          degree: "Professional Industrial Common Core",
-          institution: "Specialized Institute Of Applied Technology",
-          period: "September 2018 - July 2019"
+          institution: "Mohamed V Technical High School, Beni Mellal",
+          period: "September 2020 – July 2021"
         }
       ]
     },
@@ -117,37 +114,31 @@ const Resume = () => {
       title: "Work Experience",
       items: [
         {
-          position: "Developer",
+          position: "Web Developer Intern",
+          company: "Agence du Bassin Hydraulique de l'Oum Er Rbia, Beni Mellal",
+          period: "August 2025 – September 2025",
+          responsibilities: [
+            "Developed a web application with interactive mapping and real-time tracking using Django and React",
+            "Integrated weather data (OpenWeatherMap API) for decision-making"
+          ]
+        },
+        {
+          position: "Web Developer Intern",
           company: "ENCG Beni Mellal",
-          period: "August 2024 - October 2024",
+          period: "August 2024 – September 2024",
           responsibilities: [
-            "Optimized a slot management platform",
-            "Worked with PHP, HTML, CSS, JavaScript"
+            "Developed and improved a slot & schedule management platform",
+            "Optimized database performance and built dynamic user interfaces"
           ]
         },
         {
-          position: "System Administrator",
-          company: "Agence du Bassin Hydraulique de l'Oum Er Rbia",
-          period: "April 2022 - May 2022",
+          position: "System Administrator Intern",
+          company: "Agence du Bassin Hydraulique de l'Oum Er Rbia, Beni Mellal",
+          period: "April 2022 – May 2022",
           responsibilities: [
-            "Recovered a RAID 5 server (HP ProLiant DL380 G7)",
-            "Collaborated with a network technician and 5 developers"
-          ]
-        },
-        {
-          position: "Network Maintenance Technician",
-          company: "Institut Spécialisé des Arts Traditionnels",
-          period: "April 2022 - May 2022",
-          responsibilities: [
-            "Installed and configured network printers"
-          ]
-        },
-        {
-          position: "Administrative Assistant",
-          company: "ISTA NTIC, Beni Mellal",
-          period: "April 2022 - May 2022",
-          responsibilities: [
-            "Processed registration files and updated data"
+            "Resolved a critical incident on the main server",
+            "Implemented a backup server and restored the system",
+            "Configured printers and managed user access"
           ]
         }
       ]
@@ -157,69 +148,77 @@ const Resume = () => {
       technical: {
         title: "Technical Skills",
         items: [
-          "Network & System Administration",
-          "Development & Programming",
-          "Databases",
-          "SCRUM Methodologies, GitHub collaboration",
-          "OS: Unix/Linux, Windows",
+          "Network & System Administration (Unix/Linux, Windows)",
+          "Development: Python, C++, C#, Java, JavaScript, PHP, HTML/CSS",
+          "Frameworks: Java Spring Boot, React.js, Django, Eel",
+          "Databases: Oracle, Microsoft SQL Server",
+          "SCRUM & GitHub collaboration",
           "UML & Merise Modeling",
-          "Tools: Git, Shell, SqlPlus, SSMS, VS Code, PyCharm, Geany, VMware, Azure, PuTTY"
+          "Tools: Git, Shell, SqlPlus, SSMS, VS Code, PyCharm, Geany, VMware, Azure, PuTTY, PowerBI, IntelliJ IDEA"
         ]
       },
       other: {
         title: "Other Skills",
         items: [
-          "Problem-solving skills",
           "Teamwork",
-          "Communication",
-          "Project management",
-          "Time management",
-          "Adaptability"
+          "Time Management",
+          "Adaptability",
+          "Problem-solving"
         ]
       }
     },
     projects: {
-      title: "Projects",
+      title: "Academic Projects",
       items: [
         {
-          title: "Java OOP Project",
-          period: "December 2024 - January 2025",
-          description: "Development of a dental office management system",
-          technologies: "Java, Swing, UML, Maven, IntelliJ IDEA"
+          title: "Dental Office Management System (Desktop)",
+          period: "Dec 2024 – Jan 2025",
+          description: "Management system for a dental office",
+          technologies: "Java, Swing"
         },
         {
-          title: "ASP.NET Core MVC Project",
-          period: "December 2024 - January 2025",
-          description: "Development of a dental office management system",
-          technologies: "C#, ReactJS, SQL, MVC, SSMS, Visual Studio"
+          title: "Restaurant Management System",
+          period: "Dec 2024 – Jan 2025",
+          description: "Restaurant management system",
+          technologies: "ASP.NET, React"
         },
         {
-          title: "Restaurant Management System (Final Year Project)",
-          period: "May 2024 - June 2024",
-          description: "Complete restaurant management system",
-          technologies: "Python, Django, SQLite, Tkinter, VS Code"
+          title: "Restaurant Management System",
+          period: "May 2024 – Jul 2024",
+          description: "Restaurant management system",
+          technologies: "Python, Eel"
         },
         {
-          title: "Bill Management",
-          description: "C++ application for invoice management with classes for Product, Client, Invoice; includes data persistence and calculation features."
+          title: "Banking Management System",
+          period: "Jun 2025",
+          description: "Bank management system",
+          technologies: "Java, Spring"
         },
         {
-          title: "Finger Vein Biometric Identification with Fused CNNs",
-          description: "Biometric identification system using advanced CNN architecture for secure authentication through finger vein patterns."
+          title: "E-Commerce Website",
+          period: "May 2025 – Jul 2025",
+          description: "E-commerce platform",
+          technologies: "Java, Spring Boot"
         },
         {
-          title: "Gestion des Parcs de Jeux",
-          description: "C++ amusement park management system using object-oriented programming, with features for game tracking and CSV export."
+          title: "Cloud CDN with Azure",
+          period: "May 2025",
+          description: "Deployment of a CDN on Microsoft Azure"
+        },
+        {
+          title: "Virtualization with Master/Slave Communication",
+          period: "May 2025",
+          description: "Virtualized infrastructure with Master/Slave communication"
         }
       ]
     },
     certifications: {
       title: "Certifications",
       items: [
+        "Oracle Database Administration 2019",
+        "Microsoft Certified: Azure Fundamentals (AZ-900)",
         "CCNA",
-        "Microsoft Office Specialist: Master 2016",
-        "Microsoft Certified: Azure Fundamentals",
-        "Interactivity with JavaScript",
+        "MOS: Microsoft Office Specialist Master 2016",
         "The Unix Workbench",
         "Programming for Everybody (Python)"
       ]
@@ -236,12 +235,15 @@ const Resume = () => {
       title: "Additional Information",
       items: [
         "Driver's License: B",
+        "Portfolio: https://kassimi.vercel.app/",
         "Interests: Travel, E-sports, Cooking"
       ]
     }
   };
-  
+
+  // =========================
   // French content
+  // =========================
   const frenchContent: ContentType = {
     title: "Mon CV",
     downloadBtn: "Télécharger CV (PDF)",
@@ -251,32 +253,27 @@ const Resume = () => {
         {
           degree: "Cycles d'ingénieur en informatique et réseaux",
           institution: "Ecole Marocaine des Sciences de l'Ingénieur, Rabat",
-          period: "Octobre 2023 - En cours"
+          period: "Octobre 2023 – En cours"
         },
         {
           degree: "ALX Software Engineering",
           institution: "ALX Academy",
-          period: "Août 2023 - Mars 2025"
+          period: "Août 2023 – Mars 2025"
         },
         {
           degree: "Diplôme en Infrastructure Digitale, Option Systèmes et Réseaux",
-          institution: "Institut Spécialisé de Technologie Appliquée NTIC, Beni Mellal",
-          period: "Avril 2023 - Mai 2023"
+          institution: "ISTA NTIC, Beni Mellal",
+          period: "Avril 2023 – Mai 2023"
         },
         {
           degree: "Maintenance Informatique et Réseaux",
           institution: "ISTA NTIC, Beni Mellal",
-          period: "Septembre 2019 - Juillet 2021"
+          period: "Septembre 2019 – Juillet 2021"
         },
         {
           degree: "Baccalauréat en Maintenance Informatique et Réseaux",
           institution: "Lycée Technique Mohamed V, Beni Mellal",
-          period: "Septembre 2018 - Juillet 2021"
-        },
-        {
-          degree: "Troncs Communs Professionnels Industriels",
-          institution: "ISTA, Beni Mellal",
-          period: "Septembre 2018 - Juillet 2019"
+          period: "Septembre 2020 – Juillet 2021"
         }
       ]
     },
@@ -284,37 +281,31 @@ const Resume = () => {
       title: "Expérience Professionnelle",
       items: [
         {
-          position: "Développeur",
+          position: "Stagiaire Développeur Web",
+          company: "Agence du Bassin Hydraulique de l'Oum Er Rbia, Beni Mellal",
+          period: "Août 2025 – Septembre 2025",
+          responsibilities: [
+            "Développement d’une application web intégrant une cartographie interactive et un suivi en temps réel (Django + React)",
+            "Amélioration de la prise de décision avec intégration de données météorologiques (API OpenWeatherMap)"
+          ]
+        },
+        {
+          position: "Stagiaire Développeur Web",
           company: "ENCG Beni Mellal",
-          period: "Août 2024 - Octobre 2024",
+          period: "Août 2024 – Septembre 2024",
           responsibilities: [
-            "Optimisation d'une plateforme de gestion de créneaux",
-            "Stack : PHP, HTML, CSS, JavaScript"
+            "Développement et amélioration d’une plateforme de gestion des créneaux et emplois du temps",
+            "Optimisation des bases de données et création d’interfaces dynamiques"
           ]
         },
         {
-          position: "Administrateur Système",
-          company: "Agence du Bassin Hydraulique de l'Oum Er Rbia",
-          period: "Avril 2022 - Mai 2022",
+          position: "Stagiaire Administrateur Système",
+          company: "Agence du Bassin Hydraulique de l'Oum Er Rbia, Beni Mellal",
+          period: "Avril 2022 – Mai 2022",
           responsibilities: [
-            "Récupération d'un serveur RAID 5 (HP ProLiant DL380 G7)",
-            "Travail en équipe avec technicien réseau + 5 développeurs"
-          ]
-        },
-        {
-          position: "Technicien de maintenance réseau",
-          company: "Institut Spécialisé des Arts Traditionnels, Beni Mellal",
-          period: "Avril 2022 - Mai 2022",
-          responsibilities: [
-            "Installation et configuration des imprimantes réseau"
-          ]
-        },
-        {
-          position: "Assistant administratif",
-          company: "ISTA NTIC, Beni Mellal",
-          period: "Avril 2022 - Mai 2022",
-          responsibilities: [
-            "Traitement des dossiers d'inscription et mise à jour des données"
+            "Résolution d’un incident critique sur le serveur principal",
+            "Mise en place d’un serveur de secours et restauration du système",
+            "Installation et configuration d’imprimantes réseau, gestion des accès utilisateurs"
           ]
         }
       ]
@@ -324,24 +315,22 @@ const Resume = () => {
       technical: {
         title: "Compétences Techniques",
         items: [
-          "Administration Réseau & Systèmes",
-          "Développement & Programmation",
-          "Bases de données",
-          "Méthodologies SCRUM, collaboration avec GitHub",
-          "OS : Unix/Linux, Windows",
+          "Administration Réseau & Systèmes (Unix/Linux, Windows)",
+          "Développement : Python, C++, C#, Java, JavaScript, PHP, HTML/CSS",
+          "Frameworks : Java Spring Boot, React.js, Django, Eel",
+          "Bases de données : Oracle, Microsoft SQL Server",
+          "Méthodologies SCRUM & collaboration GitHub",
           "Modélisation UML & Merise",
-          "Outils : Git, Shell, SqlPlus, SSMS, VS Code, PyCharm, Geany, VMware, Azure, PuTTY"
+          "Outils : Git, Shell, SqlPlus, SSMS, VS Code, PyCharm, Geany, VMware, Azure, PuTTY, PowerBI, IntelliJ IDEA"
         ]
       },
       other: {
-        title: "Autres Compétences",
+        title: "Soft Skills",
         items: [
-          "Résolution de problèmes",
-          "Travail d'équipe",
-          "Communication",
-          "Gestion de projet",
+          "Travail en équipe",
           "Gestion du temps",
-          "Adaptabilité"
+          "Adaptabilité",
+          "Résolution de problèmes"
         ]
       }
     },
@@ -349,44 +338,54 @@ const Resume = () => {
       title: "Projets Académiques",
       items: [
         {
-          title: "Projet Java POO",
-          period: "Décembre 2024 - Janvier 2025",
-          description: "Développement d'un système de gestion d'un cabinet dentaire",
-          technologies: "Java, Swing, UML, Maven, IntelliJ IDEA"
+          title: "Application de Gestion d’un Cabinet Dentaire (Desktop)",
+          period: "Déc 2024 – Jan 2025",
+          description: "Système de gestion d’un cabinet dentaire",
+          technologies: "Java, Swing"
         },
         {
-          title: "Projet ASP.NET Core MVC",
-          period: "Décembre 2024 - Janvier 2025",
-          description: "Développement d'un système de gestion d'un cabinet dentaire",
-          technologies: "C#, ReactJS, SQL, MVC, SSMS, Visual Studio"
-        },
-        {
-          title: "Projet de Fin d'Année (PFA)",
-          period: "Mai 2024 - Juin 2024",
+          title: "Système de Gestion de Restaurant",
+          period: "Déc 2024 – Jan 2025",
           description: "Système de gestion de restaurant",
-          technologies: "Python, Django, SQLite, Tkinter, VS Code"
+          technologies: "ASP.NET, React"
         },
         {
-          title: "Gestion des Factures",
-          description: "Application C++ pour la gestion des factures avec des classes pour Produit, Client, Facture; comprend des fonctionnalités de persistance et de calcul."
+          title: "Système de Gestion de Restaurant",
+          period: "Mai 2024 – Juil 2024",
+          description: "Système de gestion de restaurant",
+          technologies: "Python, Eel"
         },
         {
-          title: "Identification Biométrique par Veines Digitales avec CNN Fusionnés",
-          description: "Système d'identification biométrique utilisant une architecture CNN avancée pour l'authentification sécurisée grâce aux motifs des veines digitales."
+          title: "Système de Gestion Bancaire",
+          period: "Juin 2025",
+          description: "Système bancaire",
+          technologies: "Java, Spring"
         },
         {
-          title: "Gestion des Parcs de Jeux",
-          description: "Système de gestion de parc d'attractions en C++ utilisant la programmation orientée objet, avec fonctionnalités de suivi des jeux et export CSV."
+          title: "Site Web de E-Commerce",
+          period: "Mai 2025 – Juil 2025",
+          description: "Plateforme e-commerce",
+          technologies: "Java, Spring Boot"
+        },
+        {
+          title: "Cloud CDN avec Azure",
+          period: "Mai 2025",
+          description: "Configuration et déploiement d’un CDN sur Microsoft Azure"
+        },
+        {
+          title: "Virtualisation avec Communication Master/Slave",
+          period: "Mai 2025",
+          description: "Infrastructure virtualisée avec communication Master/Slave"
         }
       ]
     },
     certifications: {
       title: "Certificats",
       items: [
+        "Oracle Database Administration 2019",
+        "Microsoft Certified: Azure Fundamentals (AZ-900)",
         "CCNA",
-        "MOS : Master on Microsoft Office 2016",
-        "Microsoft Certified: Azure Fundamentals",
-        "Interactivity with JavaScript",
+        "MOS : Master Microsoft Office 2016",
         "The Unix Workbench",
         "Programming for Everybody (Python)"
       ]
@@ -395,7 +394,7 @@ const Resume = () => {
       title: "Langues",
       items: [
         "Français : Courant",
-        "Anglais : Technique (intermédiaire)",
+        "Anglais : Technique (Intermédiaire)",
         "Arabe : Maternelle"
       ]
     },
@@ -403,12 +402,15 @@ const Resume = () => {
       title: "Informations Complémentaires",
       items: [
         "Permis de conduire : B",
-        "Centres d'intérêt : Voyages, E-sport, Cuisine"
+        "Portfolio : https://kassimi.vercel.app/",
+        "Centres d’intérêt : Voyages, E-sports, Cuisine"
       ]
     }
   };
 
+  // =========================
   // Select content based on language
+  // =========================
   const content = language === 'en' ? englishContent : frenchContent;
 
   return (
@@ -462,6 +464,7 @@ const Resume = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
+          {/* Education */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -487,6 +490,7 @@ const Resume = () => {
             </div>
           </motion.div>
 
+          {/* Experience */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -512,6 +516,7 @@ const Resume = () => {
             </div>
           </motion.div>
 
+          {/* Skills */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -541,6 +546,7 @@ const Resume = () => {
             </div>
           </motion.div>
 
+          {/* Projects */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -564,6 +570,7 @@ const Resume = () => {
             </div>
           </motion.div>
 
+          {/* Certifications */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -580,6 +587,7 @@ const Resume = () => {
             </ul>
           </motion.div>
 
+          {/* Languages */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -596,6 +604,7 @@ const Resume = () => {
             </ul>
           </motion.div>
 
+          {/* Additional */}
           {content.additional && (
             <motion.div 
               variants={fadeInUp}
@@ -618,4 +627,4 @@ const Resume = () => {
   );
 };
 
-export default Resume; 
+export default Resume;
