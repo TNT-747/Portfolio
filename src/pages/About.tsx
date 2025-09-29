@@ -29,7 +29,8 @@ const About = () => {
   return (
     <section className="py-20">
       <div className="container">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
+          {/* About */}
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -45,23 +46,22 @@ const About = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mb-16"
           >
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Who I Am</h2>
-              <p className="mb-4 text-gray-600 dark:text-gray-300">
-                Through my academic background and professional experiences, I have built strong skills in programming 
-                (Java, C, C++, C#), Windows/Linux administration, and Cloud & virtualized infrastructure management.
-              </p>
-              <p className="mb-4 text-gray-600 dark:text-gray-300">
-                Passionate about automation and Continuous Integration/Deployment (CI/CD), I also have solid knowledge 
-                of databases, Agile methodologies (SCRUM), and collaborative tools (Git, GitHub, Azure, VMware, PowerBI).
-              </p>
-              <p className="mb-4 text-gray-600 dark:text-gray-300">
-                Versatile and motivated, I am fluent in French and English, and I strongly value security, quality, and 
-                efficiency in every project I contribute to.
-              </p>
-            </div>
+            <h2 className="text-2xl font-bold mb-4">Who I Am</h2>
+            <p className="mb-4 text-gray-600 dark:text-gray-300">
+              Through my academic background and professional experiences, I have built strong skills in programming 
+              (Java, C, C++, C#), Windows/Linux administration, and Cloud & virtualized infrastructure management.
+            </p>
+            <p className="mb-4 text-gray-600 dark:text-gray-300">
+              Passionate about automation and Continuous Integration/Deployment (CI/CD), I also have solid knowledge 
+              of databases, Agile methodologies (SCRUM), and collaborative tools (Git, GitHub, Azure, VMware, PowerBI).
+            </p>
+            <p className="mb-4 text-gray-600 dark:text-gray-300">
+              Versatile and motivated, I am fluent in French and English, and I strongly value security, quality, and 
+              efficiency in every project I contribute to.
+            </p>
           </motion.div>
-          
+
+          {/* Skills */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -84,75 +84,90 @@ const About = () => {
               ))}
             </div>
           </motion.div>
-          
+
+          {/* Experience */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
+            className="mb-16"
           >
-            <h2 className="text-2xl font-bold mb-6 text-center">My Journey</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">Experience</h2>
             <div className="space-y-6">
               <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">Ecole Marocaine des Sciences de l'Ingénieur (EMSI)</h3>
-                <p className="text-gray-500 dark:text-gray-400">Engineer's Degree, Computer & Network Engineering | 2023 - Present</p>
+                <h3 className="text-xl font-bold">Web Developer Intern – Agence du Bassin Hydraulique de l'Oum Er-Rbia</h3>
+                <p className="text-gray-500 dark:text-gray-400">Aug 2025 - Sep 2025 | Béni Mellal, Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  Specialized in software development, databases, networks, and cloud computing.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">ALX Academy</h3>
-                <p className="text-gray-500 dark:text-gray-400">Software Engineering Program | 2023 - 2025</p>
-                <p className="mt-2 text-gray-600 dark:text-gray-300">Comprehensive training in software development and engineering practices.</p>
-              </div>
-
-              <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">Agence du Bassin Hydraulique de l'Oum Er-Rbia</h3>
-                <p className="text-gray-500 dark:text-gray-400">Web Developer Intern | Aug 2025 - Sep 2025</p>
-                <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  Built a web application for interactive mapping, monitoring, and predictive analytics using React.js, 
+                  Built a web app for interactive mapping, monitoring, and predictive analytics using React.js, 
                   Django REST, AI models, and OpenWeatherMap API.
                 </p>
               </div>
 
               <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">ENCG Beni Mellal</h3>
-                <p className="text-gray-500 dark:text-gray-400">Web Developer Intern | Aug 2024 - Sep 2024</p>
+                <h3 className="text-xl font-bold">Web Developer Intern – ENCG Beni Mellal</h3>
+                <p className="text-gray-500 dark:text-gray-400">Aug 2024 - Sep 2024 | Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   Developed a scheduling and timetable management platform with dynamic UI and optimized database performance.
                 </p>
               </div>
 
               <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">Agence du Bassin Hydraulique de l'Oum Er-Rbia</h3>
-                <p className="text-gray-500 dark:text-gray-400">System Administrator Intern | Apr 2023</p>
+                <h3 className="text-xl font-bold">System Administrator Intern – Agence du Bassin Hydraulique</h3>
+                <p className="text-gray-500 dark:text-gray-400">Apr 2023 | Béni Mellal, Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   Resolved RAID 5 server failure on HP ProLiant DL380 G7, restored availability, and implemented a backup solution.
                 </p>
               </div>
 
               <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">Institut Spécialisé des Arts Traditionnels</h3>
-                <p className="text-gray-500 dark:text-gray-400">Network Maintenance Intern | Apr 2023</p>
+                <h3 className="text-xl font-bold">Network Maintenance Intern – Institut Spécialisé des Arts Traditionnels</h3>
+                <p className="text-gray-500 dark:text-gray-400">Apr 2023 | Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   Installed and configured network printers and managed user access.
                 </p>
               </div>
 
               <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">ISTA NTIC, Beni Mellal</h3>
-                <p className="text-gray-500 dark:text-gray-400">Administrative Assistant Intern | Jul 2022 - Sep 2022</p>
+                <h3 className="text-xl font-bold">Administrative Assistant Intern – ISTA NTIC</h3>
+                <p className="text-gray-500 dark:text-gray-400">Jul 2022 - Sep 2022 | Beni Mellal, Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
                   Handled registration processes, updated databases, and provided trainee support.
                 </p>
               </div>
+            </div>
+          </motion.div>
+
+          {/* Education */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          >
+            <h2 className="text-2xl font-bold mb-6 text-center">Education</h2>
+            <div className="space-y-6">
+              <div className="border-l-4 border-primary pl-4 py-2">
+                <h3 className="text-xl font-bold">Ecole Marocaine des Sciences de l'Ingénieur (EMSI)</h3>
+                <p className="text-gray-500 dark:text-gray-400">Engineer’s Degree – Computer & Network Engineering | 2023 - Present</p>
+              </div>
+
+              <div className="border-l-4 border-primary pl-4 py-2">
+                <h3 className="text-xl font-bold">ALX Academy</h3>
+                <p className="text-gray-500 dark:text-gray-400">Software Engineering Program | 2023 - 2025</p>
+              </div>
+
+              <div className="border-l-4 border-primary pl-4 py-2">
+                <h3 className="text-xl font-bold">ISTA NTIC</h3>
+                <p className="text-gray-500 dark:text-gray-400">Associate’s Degree – Digital Infrastructure Systems & Networks | 2021 - 2023</p>
+              </div>
 
               <div className="border-l-4 border-primary pl-4 py-2">
                 <h3 className="text-xl font-bold">Mohamed V Technical High School</h3>
-                <p className="text-gray-500 dark:text-gray-400">Baccalaureate, Computers & Networks Maintenance | 2018 - 2021</p>
-                <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  Gained foundation in IT, networking, system administration, and security.
-                </p>
+                <p className="text-gray-500 dark:text-gray-400">Baccalaureate – Computers & Networks Maintenance | 2018 - 2021</p>
+              </div>
+
+              <div className="border-l-4 border-primary pl-4 py-2">
+                <h3 className="text-xl font-bold">Specialized Institute of Applied Technology</h3>
+                <p className="text-gray-500 dark:text-gray-400">Industrial Professional Training | 2018 - 2019</p>
               </div>
             </div>
           </motion.div>
