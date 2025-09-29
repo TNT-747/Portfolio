@@ -235,7 +235,7 @@ const Resume = () => {
       title: "Additional Information",
       items: [
         "Driver's License: B",
-        "Portfolio: https://kassimi.vercel.app/",
+      
         "Interests: Travel, E-sports, Cooking"
       ]
     }
@@ -402,7 +402,7 @@ const Resume = () => {
       title: "Informations Complémentaires",
       items: [
         "Permis de conduire : B",
-        "Portfolio : https://kassimi.vercel.app/",
+       
         "Centres d’intérêt : Voyages, E-sports, Cuisine"
       ]
     }
