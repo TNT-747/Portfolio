@@ -12,73 +12,98 @@ interface Project {
 }
 
 const Projects = () => {
-  // User's actual projects from CV & PFE
+  // Projects from CV / LinkedIn
   const projects: Project[] = [
     {
       id: 1,
-      title: "Dental Clinic Management System",
-      description: "Desktop system for managing patient records, appointments, and billing using Java Swing and UML.",
-      tags: ["Java", "Swing", "UML", "Maven", "IntelliJ IDEA"],
-      period: "December 2024 – January 2025",
-      github: "https://github.com/kassi-12/dental-office-java"
+      title: "Water Quality Management System",
+      description: "Frontend with React.js and Tailwind CSS, backend with Django REST Framework and secure JWT authentication for real-time water monitoring and prediction.",
+      tags: ["React.js", "Django", "Tailwind CSS", "JWT"],
+      period: "Aug 2025 – Sep 2025",
     },
     {
       id: 2,
-      title: "Restaurant Management System",
-      description: "Management platform built with ASP.NET and React for handling orders, inventory, and user interaction.",
-      tags: ["ASP.NET", "React.js", "SQL", "MVC", "SSMS"],
-      period: "December 2024 – January 2025",
-      github: "https://github.com/kassi-12/restaurant-management"
+      title: "E-Commerce Website",
+      description: "Developed a full-featured e-commerce platform with catalog, cart, order management, and payment simulation using MVC and Agile methodology.",
+      tags: ["Java", "Spring Boot", "Spring Data", "Bootstrap", "PayPal"],
+      period: "May 2025 – Jul 2025",
     },
     {
       id: 3,
-      title: "Restaurant Management with Python & Eel",
-      description: "Lightweight restaurant system with Python and Eel for desktop-based management of orders and menus.",
-      tags: ["Python", "Eel", "SQLite"],
-      period: "May 2024 – July 2024",
-      github: "https://github.com/kassi-12/restaurant-management"
+      title: "Banking Management System",
+      description: "Designed and developed a banking system with account creation, deposit/withdrawal, transaction history, and REST APIs secured with Spring Security.",
+      tags: ["Java", "Spring Boot", "Spring Data", "REST APIs", "Spring Security"],
+      period: "Jun 2025 – Jun 2025",
     },
     {
       id: 4,
-      title: "Banking Management System",
-      description: "Java Spring application to manage accounts, clients, and transactions in a simulated banking environment.",
-      tags: ["Java", "Spring Boot", "Hibernate", "SQL"],
-      period: "June 2025 – June 2025",
-      github: "https://github.com/kassi-12/banking-system"
+      title: "Android Bus Ticket Application",
+      description: "Android mobile app for bus ticket booking and management with seat selection and local database support.",
+      tags: ["Android", "Java", "SQLite"],
+      period: "Apr 2025 – May 2025",
     },
     {
       id: 5,
-      title: "E-Commerce Platform",
-      description: "Full-featured e-commerce website with product listing, cart, and order management built using Java Spring Boot.",
-      tags: ["Java", "Spring Boot", "Thymeleaf", "SQL"],
-      period: "May 2025 – July 2025",
-      github: "https://github.com/kassi-12/ecommerce-platform"
+      title: "Cloud CDN with Azure",
+      description: "Configured and deployed a Content Delivery Network (CDN) on Microsoft Azure to improve performance and availability with integrated security policies.",
+      tags: ["Azure", "CDN", "DevOps", "Cloud"],
+      period: "May 2025 – May 2025",
     },
     {
       id: 6,
-      title: "Cloud CDN with Azure",
-      description: "Configuration and deployment of a Content Delivery Network (CDN) using Microsoft Azure services.",
-      tags: ["Azure", "Cloud", "CDN", "Networking"],
+      title: "Virtualization with Master/Slave Communication",
+      description: "Designed and deployed a virtualized infrastructure with Master/Slave communication, synchronization, and fault-tolerance testing.",
+      tags: ["Virtualization", "VMware", "Networking", "System Administration"],
       period: "May 2025 – May 2025",
-      github: "https://github.com/kassi-12/cloud-cdn-azure"
     },
     {
       id: 7,
-      title: "Virtualization with Master/Slave Communication",
-      description: "Design and deployment of a virtualized infrastructure with master/slave communication using VMware.",
-      tags: ["Virtualization", "VMware", "Networking"],
-      period: "May 2025 – May 2025",
-      github: "https://github.com/kassi-12/virtualization-project"
-    }
+      title: "Dental Clinic Management Desktop Application",
+      description: "Java Swing application for patient records, appointment scheduling, billing, and treatment tracking with file-based persistence.",
+      tags: ["Java", "Swing"],
+      period: "Dec 2024 – Jan 2025",
+    },
+    {
+      id: 8,
+      title: "Restaurant Management Web Application",
+      description: "Web app with C# .NET backend and React frontend for managing menus, orders, billing, and reservations with SQL Server integration.",
+      tags: ["C#", "ASP.NET", "React.js", "SQL Server"],
+      period: "Dec 2024 – Jan 2025",
+    },
+    {
+      id: 9,
+      title: "ENCG Website",
+      description: "Developed and optimized a schedule and timetable management platform with improved database handling and dynamic interfaces.",
+      tags: ["Web Development", "Database", "UI/UX"],
+      period: "Aug 2024 – Sep 2024",
+    },
+    {
+      id: 10,
+      title: "Restaurant Management System (Python & Eel)",
+      description: "Restaurant system using Python and Eel with menu, orders, billing, reservations, and local data persistence.",
+      tags: ["Python", "Eel", "Data Management"],
+      period: "May 2024 – Jul 2024",
+    },
+    {
+      id: 11,
+      title: "Invoice Management System",
+      description: "C++ application to manage invoices, products, and clients with OOP design, invoice calculations, and file-based storage.",
+      tags: ["C++", "OOP", "File Management"],
+      period: "Dec 2023 – Dec 2023",
+    },
+    {
+      id: 12,
+      title: "Amusement Park Management System",
+      description: "C++ system for amusement park management with inheritance, polymorphism, CSV export, and game tracking.",
+      tags: ["C++", "OOP", "STL", "CSV Export"],
+    },
   ];
 
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
+      transition: { staggerChildren: 0.2 }
     }
   };
 
@@ -140,22 +165,12 @@ const Projects = () => {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
                 <div className="flex gap-3">
                   {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary py-2 text-sm"
-                    >
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary py-2 text-sm">
                       View Project
                     </a>
                   )}
                   {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-outline py-2 text-sm"
-                    >
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-outline py-2 text-sm">
                       GitHub
                     </a>
                   )}
