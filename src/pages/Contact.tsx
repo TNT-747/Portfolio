@@ -78,7 +78,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold">Location</h3>
-                  <p className="text-gray-600 dark:text-gray-300">Mghila Qut Romane Rue 20 Nr 09, Beni Mellal, Morocco</p>
+                  <p className="text-gray-600 dark:text-gray-300">Rabat, Morocco</p>
                 </div>
               </div>
 
