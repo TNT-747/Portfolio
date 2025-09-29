@@ -160,15 +160,16 @@ const About = () => {
                 <p className="text-gray-500 dark:text-gray-400">Associate’s Degree – Digital Infrastructure Systems & Networks | 2021 - 2023</p>
               </div>
 
+              
+              <div className="border-l-4 border-primary pl-4 py-2">
+                <h3 className="text-xl font-bold">Specialized Institute of Applied Technology</h3>
+                <p className="text-gray-500 dark:text-gray-400">Baccalaureate – Computers & Networks Maintenance | 2019 - 2021</p>
+              </div>
               <div className="border-l-4 border-primary pl-4 py-2">
                 <h3 className="text-xl font-bold">Mohamed V Technical High School</h3>
                 <p className="text-gray-500 dark:text-gray-400">Baccalaureate – Computers & Networks Maintenance | 2018 - 2021</p>
               </div>
 
-              <div className="border-l-4 border-primary pl-4 py-2">
-                <h3 className="text-xl font-bold">Specialized Institute of Applied Technology</h3>
-                <p className="text-gray-500 dark:text-gray-400">Industrial Professional Training | 2018 - 2019</p>
-              </div>
             </div>
           </motion.div>
         </div>
