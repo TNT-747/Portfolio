@@ -451,7 +451,7 @@ const Resume = () => {
             </div>
             
             <motion.a
-              href={language === 'en' ? "/pdfs/resume-en.pdf" : "/pdfs/resume-fr.pdf"}
+              href={language === 'en' ? "resume-en.pdf" : "resume-fr.pdf"}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
