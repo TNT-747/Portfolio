@@ -19,7 +19,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-md">
-            Final Year Project (PFE) Internship Seeker | Software Engineering • DevOps
+            Software Development and Information Systems Engineer
             </p>
             <div className="flex space-x-4 mt-6">
               <a
