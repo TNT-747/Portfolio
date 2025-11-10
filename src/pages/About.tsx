@@ -48,16 +48,13 @@ const About = () => {
           >
             <h2 className="text-2xl font-bold mb-4">Who I Am</h2>
             <p className="mb-4 text-gray-600 dark:text-gray-300">
-              Through my academic background and professional experiences, I have built strong skills in programming 
-              (Java, C, C++, C#), Windows/Linux administration, and Cloud & virtualized infrastructure management.
+              Through my academic background and professional experiences, I have cultivated strong skills in programming (Java, C, C++, C#), Windows/Linux administration, and cloud & virtualized infrastructure management.
             </p>
             <p className="mb-4 text-gray-600 dark:text-gray-300">
-              Passionate about automation and Continuous Integration/Deployment (CI/CD), I also have solid knowledge 
-              of databases, Agile methodologies (SCRUM), and collaborative tools (Git, GitHub, Azure, VMware, PowerBI).
+              Passionate about automation and Continuous Integration/Deployment (CI/CD), I also possess solid knowledge of databases, Agile methodologies (SCRUM), and collaborative tools (Git, GitHub, Azure, VMware, PowerBI).
             </p>
             <p className="mb-4 text-gray-600 dark:text-gray-300">
-              Versatile and motivated, I am fluent in French and English, and I strongly value security, quality, and 
-              efficiency in every project I contribute to.
+              Versatile and motivated, I am fluent in French and English, and I am committed to upholding security, quality, and efficiency in every project I contribute to.
             </p>
           </motion.div>
 
@@ -98,8 +95,8 @@ const About = () => {
                 <h3 className="text-xl font-bold">Web Developer Intern – Agence du Bassin Hydraulique de l'Oum Er-Rbia</h3>
                 <p className="text-gray-500 dark:text-gray-400">Aug 2025 - Sep 2025 | Béni Mellal, Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  Built a web app for interactive mapping, monitoring, and predictive analytics using React.js, 
-                  Django REST, AI models, and OpenWeatherMap API.
+                  Built a web application for interactive mapping, monitoring, and predictive analytics using React.js, 
+                  Django REST, AI models, and the OpenWeatherMap API.
                 </p>
               </div>
 
@@ -107,7 +104,7 @@ const About = () => {
                 <h3 className="text-xl font-bold">Web Developer Intern – National School of Commerce and Management</h3>
                 <p className="text-gray-500 dark:text-gray-400">Aug 2024 - Sep 2024 | Beni Mellal, Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  Developed a scheduling and timetable management platform with dynamic UI and optimized database performance.
+                  Developed a scheduling and timetable management platform with a dynamic UI and optimized database performance.
                 </p>
               </div>
 
@@ -115,7 +112,7 @@ const About = () => {
                 <h3 className="text-xl font-bold">System Administrator Intern – Agence du Bassin Hydraulique de l'Oum Er-Rbia</h3>
                 <p className="text-gray-500 dark:text-gray-400">Apr 2023 | Béni Mellal, Morocco</p>
                 <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  Resolved RAID 5 server failure on HP ProLiant DL380 G7, restored availability, and implemented a backup solution.
+                  Resolved a RAID 5 server failure on an HP ProLiant DL380 G7, restored availability, and implemented a backup solution.
                 </p>
               </div>
 

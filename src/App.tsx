@@ -6,6 +6,8 @@ import Projects from './pages/Projects';
 import Certifications from './pages/Certifications';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
+import Chatbot from './components/chatbot/Chatbot';
+import './components/chatbot/Chatbot.css';
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Chatbot />
     </Layout>
   );
 }

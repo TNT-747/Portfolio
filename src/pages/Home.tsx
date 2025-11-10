@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import LogoCarousel from '../components/LogoCarousel';
+import '../components/LogoCarousel.css';
 
 const Home = () => {
   return (
@@ -16,7 +18,10 @@ const Home = () => {
               Hi, I'm <span className="text-primary">Abderrahmane KASSIMI</span>
             </h1>
             <p className="text-xl mb-8 text-gray-600 dark:text-gray-300">
-             Software Development and Information Systems Engineer
+              Software Development and Information Systems Engineer
+            </p>
+            <p className="text-lg mb-8 text-gray-500 dark:text-gray-400 max-w-2xl md:text-left text-center">
+              A passionate engineer specializing in backend development and cloud technologies, with a knack for automation (CI/CD) and building secure, high-quality applications. and I 'm always up for a challenge.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4">
               <motion.div
@@ -59,9 +64,10 @@ const Home = () => {
             </div>
           </motion.div>
         </motion.div>
+        <LogoCarousel />
       </div>
     </section>
   );
 };
 
-export default Home; 
+export default Home;

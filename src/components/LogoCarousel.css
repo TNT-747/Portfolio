@@ -1,0 +1,58 @@
+/* LogoCarousel.css */
+.logo-carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin-top: 6rem;
+  padding: 2rem 0;
+  /* Creates a smooth, transparent fade on the left and right edges */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.logo-carousel-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: calc(200px * 12);
+}
+
+.logo-item {
+  width: 120px;
+  height: 120px;
+  margin: 0 40px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(59, 130, 246, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.logo-item img {
+  width: 65%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.logo-item:hover img {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 6));
+  }
+}

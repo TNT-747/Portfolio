@@ -16,7 +16,7 @@ const Certifications = () => {
       title: "Oracle Database Administration",
       issuer: "Oracle",
       date: "Sep 2025",
-      description: "Core Oracle Database Administration training covering user, role, privilege, and password management as well as backup and recovery strategies.",
+      description: "Comprehensive training in core Oracle Database Administration, covering user, role, privilege, and password management, as well as backup and recovery strategies.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -24,7 +24,7 @@ const Certifications = () => {
       title: "Microsoft Certified: Azure Fundamentals",
       issuer: "Microsoft",
       date: "Jul 2024",
-      description: "Validation of foundational knowledge of cloud concepts and Microsoft Azure services, workloads, security, and governance.",
+      description: "Validation of foundational knowledge in cloud concepts and Microsoft Azure services, workloads, security, and governance.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -32,7 +32,7 @@ const Certifications = () => {
       title: "Programming for Everybody (Getting Started with Python)",
       issuer: "University of Michigan",
       date: "Mar 2024",
-      description: "Fundamental Python programming including variables, functions, conditionals, and loops.",
+      description: "Fundamental Python programming concepts, including variables, functions, conditionals, and loops.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -40,7 +40,7 @@ const Certifications = () => {
       title: "Software Engineering: Software Design and Project Management",
       issuer: "HKUST",
       date: "Mar 2024",
-      description: "Skills in software design principles, project management methodologies, and development lifecycle processes.",
+      description: "Acquired skills in software design principles, project management methodologies, and development lifecycle processes.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -48,7 +48,7 @@ const Certifications = () => {
       title: "The Unix Workbench",
       issuer: "Johns Hopkins University",
       date: "Mar 2024",
-      description: "Unix/Linux operating systems, shell scripting, bash programming, and command line tools.",
+      description: "In-depth knowledge of Unix/Linux operating systems, shell scripting, bash programming, and command-line tools.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -56,7 +56,7 @@ const Certifications = () => {
       title: "SQL",
       issuer: "University of Colorado Boulder",
       date: "Jan 2024",
-      description: "Database design, SQL query writing, and data manipulation techniques for relational database systems.",
+      description: "Expertise in database design, SQL query writing, and data manipulation techniques for relational database systems.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -64,7 +64,7 @@ const Certifications = () => {
       title: "Interactivity with JavaScript",
       issuer: "University of Michigan",
       date: "Dec 2023",
-      description: "Creating interactive web experiences using JavaScript, DOM manipulation, and event handling.",
+      description: "Proficiency in creating interactive web experiences using JavaScript, DOM manipulation, and event handling.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -72,7 +72,7 @@ const Certifications = () => {
       title: "Introduction to CSS3",
       issuer: "University of Michigan",
       date: "Dec 2023",
-      description: "Creating responsive web layouts, styling web pages, and implementing modern CSS techniques.",
+      description: "Skills in creating responsive web layouts, styling web pages, and implementing modern CSS techniques.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -80,7 +80,7 @@ const Certifications = () => {
       title: "Introduction to HTML5",
       issuer: "University of Michigan",
       date: "Dec 2023",
-      description: "Core concepts of HTML5 including semantic markup, form elements, and multimedia integration.",
+      description: "Mastery of core HTML5 concepts, including semantic markup, form elements, and multimedia integration.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -88,7 +88,7 @@ const Certifications = () => {
       title: "Introduction à la programmation orientée objet (en C++)",
       issuer: "EPFL",
       date: "Dec 2023",
-      description: "Object-oriented programming concepts in C++ including classes, inheritance, polymorphism, and memory management.",
+      description: "Understanding of object-oriented programming concepts in C++, including classes, inheritance, polymorphism, and memory management.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -96,7 +96,7 @@ const Certifications = () => {
       title: "Web Design for Everybody Capstone",
       issuer: "University of Michigan",
       date: "Dec 2023",
-      description: "Applied web design project showcasing HTML5, CSS3, JavaScript, and responsive design principles.",
+      description: "Completed an applied web design project showcasing proficiency in HTML5, CSS3, JavaScript, and responsive design principles.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -120,7 +120,7 @@ const Certifications = () => {
       title: "Python Essentials 2",
       issuer: "Cisco",
       date: "Oct 2023",
-      description: "Advanced Python programming with OOP, data structures, and application development.",
+      description: "Advanced Python programming concepts, including OOP, data structures, and application development.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -136,7 +136,7 @@ const Certifications = () => {
       title: "PCAP: Programming Essentials in Python",
       issuer: "Cisco",
       date: "Oct 2022",
-      description: "Professional-level Python programming skills including data structures, modules, packages, and OOP.",
+      description: "Professional-level Python programming skills, including data structures, modules, packages, and OOP.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -144,7 +144,7 @@ const Certifications = () => {
       title: "CCNA: Bridging",
       issuer: "Cisco",
       date: "Jun 2022",
-      description: "Networking fundamentals including bridging and network infrastructure configuration.",
+      description: "Networking fundamentals, including bridging and network infrastructure configuration.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -152,7 +152,7 @@ const Certifications = () => {
       title: "CCNA: Introduction to Networks",
       issuer: "Cisco",
       date: "Jun 2022",
-      description: "Covers foundational networking concepts including IP addressing, switching, and routing basics.",
+      description: "Covers foundational networking concepts, including IP addressing, switching, and routing basics.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -168,7 +168,7 @@ const Certifications = () => {
       title: "Microsoft Office Specialist: Master 2016",
       issuer: "Microsoft",
       date: "Jun 2022",
-      description: "Advanced mastery certification of Microsoft Office 2016 applications including Word, Excel, PowerPoint, and Access.",
+      description: "Advanced mastery certification of Microsoft Office 2016 applications, including Word, Excel, PowerPoint, and Access.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     },
     {
@@ -176,7 +176,7 @@ const Certifications = () => {
       title: "HTML Fundamentals",
       issuer: "Almdrasa",
       date: "2023",
-      description: "Core HTML concepts including document structure, elements, attributes, and best practices.",
+      description: "Core HTML concepts, including document structure, elements, attributes, and best practices.",
       pdfLink: "https://linkedin.com/in/abderrahmane-kassimi"
     }
   ];
