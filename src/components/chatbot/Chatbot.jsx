@@ -30,12 +30,17 @@ const Chatbot = () => {
   const getBotResponse = (userInput) => {
     const lowerCaseInput = userInput.toLowerCase();
 
+    // Enhanced keyword matching and responses
     if (lowerCaseInput.includes('hello') || lowerCaseInput.includes('hi')) {
-      return 'Hi there! How can I help you today?';
+      return 'Hi there! I can answer questions about skills, experience, and projects. What would you like to know?';
     } else if (lowerCaseInput.includes('project')) {
-      return 'You can find all the projects on the projects page. Each project has a detailed description and a link to the code.';
+      return 'You can find all the projects on the projects page. Some of them include a Water Quality Management System, an E-Commerce Website, and a Banking Management System. Would you like to know more about a specific project?';
     } else if (lowerCaseInput.includes('skill') || lowerCaseInput.includes('technolog')) {
-      return 'I am proficient in a variety of technologies, including React, TypeScript, and Node.js. For a complete list, please check out the about page.';
+      return 'I am proficient in a variety of technologies, including Java, Python, C++, React.js, Django, Spring Boot, and more. For a complete list, please check out the about page.';
+    } else if (lowerCaseInput.includes('experience')) {
+      return 'I have interned at companies like Agence du Bassin Hydraulique de l\'Oum Er-Rbia and the National School of Commerce and Management. I have worked on projects involving web development, system administration, and network maintenance. Is there a specific experience you would like to know more about?';
+    } else if (lowerCaseInput.includes('education')) {
+      return 'I am currently pursuing an Engineer’s Degree in Computer & Network Engineering at EMSI and a Software Engineering Program at ALX Academy. I also have an Associate’s Degree in Digital Infrastructure Systems & Networks.';
     } else if (lowerCaseInput.includes('contact') || lowerCaseInput.includes('email')) {
       return 'You can get in touch via the contact form on the contact page. I will get back to you as soon as possible.';
     } else if (lowerCaseInput.includes('about') || lowerCaseInput.includes('background')) {
