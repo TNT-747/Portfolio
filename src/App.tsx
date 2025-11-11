@@ -6,7 +6,7 @@ import Projects from './pages/Projects';
 import Certifications from './pages/Certifications';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
-import Chatbot from './components/chatbot/Chatbot';
+import Chatbot from './components/chatbot/Chatbot.jsx';
 import './components/chatbot/Chatbot.css';
 
 function App() {

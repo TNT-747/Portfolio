@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import LogoCarousel from '../components/LogoCarousel';
+import LogoCarousel from '../components/LogoCarousel.jsx';
 import '../components/LogoCarousel.css';
 
 const Home = () => {
