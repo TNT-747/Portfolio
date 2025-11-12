@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Tilt from 'react-parallax-tilt';
 import LogoCarousel from '../components/LogoCarousel.jsx';
 import '../components/LogoCarousel.css';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -78,13 +79,21 @@ const Home = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="mt-10 md:mt-0"
           >
-            <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-primary shadow-xl">
-              <img 
-                src="/images/pic.png" 
-                alt="Abderrahmane KASSIMI" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <Tilt
+              className="parallax-effect-glare-scale"
+              perspective={500}
+              glareEnable={true}
+              glareMaxOpacity={0.45}
+              scale={1.02}
+            >
+              <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-primary shadow-xl">
+                <img 
+                  src="/images/pic.png" 
+                  alt="Abderrahmane KASSIMI" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </Tilt>
           </motion.div>
         </motion.div>
         <LogoCarousel />
