@@ -23,7 +23,7 @@ const Chatbot = () => {
     if (isOpen) {
       setMessages([
         {
-          text: "Hello! I'm a professional chatbot here to assist you. How can I help you learn more about this portfolio?",
+          text: "Hello! I\'m a professional chatbot here to assist you. How can I help you learn more about this portfolio?",
           sender: 'bot'
         }
       ]);
@@ -33,6 +33,7 @@ const Chatbot = () => {
   const getBotResponse = (userInput) => {
     const lowerCaseInput = userInput.toLowerCase();
 
+    // Enhanced keyword matching and responses
     if (lowerCaseInput.includes('hello') || lowerCaseInput.includes('hi')) {
       return 'Hi there! I can answer questions about skills, experience, and projects. What would you like to know?';
     } else if (lowerCaseInput.includes('project')) {
@@ -52,11 +53,11 @@ const Chatbot = () => {
     } else if (lowerCaseInput.includes('certification') || lowerCaseInput.includes('certificate')) {
       return 'I have earned several certifications, including "Oracle Database Administration 2019", "Microsoft Certified: Azure Fundamentals (AZ-900)", "CCNA", and "Microsoft Office Specialist Master 2016". For a complete list, please check the "Resume" or "Certifications" page.';
     } else if (lowerCaseInput.includes('thank')) {
-      return "You're very welcome! Is there anything else I can help you with today?";
+      return "You\'re very welcome! Is there anything else I can help you with today?";
     } else if (lowerCaseInput.includes('goodbye') || lowerCaseInput.includes('bye')) {
         return 'Goodbye! Feel free to reach out if you have more questions in the future.';
     } else {
-      return "I'm sorry, I'm not sure how to answer that. Could you please try rephrasing your question? I can tell you about projects, skills, experience, and education.";
+      return "I\'m sorry, I\'m not sure how to answer that. Could you please try rephrasing your question? I can tell you about projects, skills, experience, and education.";
     }
   };
 
