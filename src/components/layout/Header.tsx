@@ -45,24 +45,29 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 dark:bg-dark/90 backdrop-blur-sm shadow-md py-3'
+          ? 'bg-white/80 dark:bg-dark/80 backdrop-blur-lg shadow-sm py-4'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link to="/" className="flex items-center">
-          <img src="/images/k.png" alt="KASSIMI Logo" className="h-10 w-10 mr-2" />
-          <span className="text-2xl font-bold">
-            <span className="text-primary">ASSIMI</span>
-          </span>
+        <Link to="/" className="flex items-center group">
+            <motion.div 
+                whileHover={{ scale: 1.05 }} 
+                className="flex items-center"
+            >
+                <img src="/images/k.png" alt="KASSIMI Logo" className="h-10 w-10 mr-1" />
+                <span className="text-2xl font-bold text-gray-800 dark:text-white tracking-tighter">
+                    ASSIMI
+                </span>
+            </motion.div>
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-2">
           {currentNavLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`relative text-sm font-medium transition-colors ${
+              className={`relative px-3 py-2 text-sm font-medium transition-colors rounded-md ${
                 location.pathname === link.path
                   ? 'text-primary'
                   : 'text-dark/80 dark:text-light/80 hover:text-primary dark:hover:text-primary'
@@ -70,10 +75,11 @@ const Header = () => {
             >
               {link.label}
               {location.pathname === link.path && (
-                <motion.span
-                  layoutId="navbar-indicator"
-                  className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-primary"
-                  transition={{ type: 'spring', bounce: 0.25 }}
+                <motion.div
+                  layoutId="navbar-highlight"
+                  className="absolute inset-0 bg-primary/10 rounded-md"
+                  style={{ zIndex: -1 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 />
               )}
             </Link>
