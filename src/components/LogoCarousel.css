@@ -13,7 +13,7 @@
 .logo-carousel-track {
   display: flex;
   animation: scroll 40s linear infinite;
-  width: calc(200px * 12);
+  width: calc(200px * 12); /* Adjusted to match the new number of logos */
 }
 
 .logo-item {
@@ -53,6 +53,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-200px * 6));
+    transform: translateX(calc(-200px * 7));
   }
 }
