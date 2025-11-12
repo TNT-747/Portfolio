@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 type EducationItem = {
   degree: string;
@@ -62,22 +62,8 @@ type ContentType = {
   };
 };
 
-const Resume = () => {
-  const [language, setLanguage] = useState<'en' | 'fr'>('en');
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
-
-  // =========================
-  // English content
-  // =========================
-  const englishContent: ContentType = {
+const contentData: { en: ContentType; fr: ContentType } = {
+  en: {
     title: "My Resume",
     downloadBtn: "Download Resume (PDF)",
     education: {
@@ -241,12 +227,8 @@ const Resume = () => {
         "Interests: Travel, E-sports, Cooking"
       ]
     }
-  };
-
-  // =========================
-  // French content
-  // =========================
-  const frenchContent: ContentType = {
+  },
+  fr: {
     title: "Mon CV",
     downloadBtn: "Télécharger CV (PDF)",
     education: {
@@ -409,12 +391,21 @@ const Resume = () => {
         "Centres d’intérêt : Voyages, E-sports, Cuisine"
       ]
     }
-  };
+  },
+};
 
-  // =========================
-  // Select content based on language
-  // =========================
-  const content = language === 'en' ? englishContent : frenchContent;
+const Resume = () => {
+  const { language } = useLanguage();
+  const content = contentData[language];
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
 
   return (
     <section className="py-20">
@@ -429,45 +420,19 @@ const Resume = () => {
             {content.title}
           </motion.h1>
           
-          <div className="flex gap-4">
-            <div className="flex items-center bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-4 py-1 rounded-md ${
-                  language === 'en'
-                    ? 'bg-primary text-white'
-                    : 'text-gray-600 dark:text-gray-300'
-                }`}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => setLanguage('fr')}
-                className={`px-4 py-1 rounded-md ${
-                  language === 'fr'
-                    ? 'bg-primary text-white'
-                    : 'text-gray-600 dark:text-gray-300'
-                }`}
-              >
-                FR
-              </button>
-            </div>
-            
-            <motion.a
-              href={language === 'en' ? "resume-en.pdf" : "resume-fr.pdf"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {content.downloadBtn}
-            </motion.a>
-          </div>
+          <motion.a
+            href={language === 'en' ? "resume-en.pdf" : "resume-fr.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {content.downloadBtn}
+          </motion.a>
         </div>
         
         <div className="max-w-4xl mx-auto">
-          {/* Education */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -493,7 +458,6 @@ const Resume = () => {
             </div>
           </motion.div>
 
-          {/* Experience */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -519,7 +483,6 @@ const Resume = () => {
             </div>
           </motion.div>
 
-          {/* Skills */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -549,7 +512,6 @@ const Resume = () => {
             </div>
           </motion.div>
 
-          {/* Projects */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -573,7 +535,6 @@ const Resume = () => {
             </div>
           </motion.div>
 
-          {/* Certifications */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -590,7 +551,6 @@ const Resume = () => {
             </ul>
           </motion.div>
 
-          {/* Languages */}
           <motion.div 
             variants={fadeInUp}
             initial="hidden"
@@ -607,7 +567,6 @@ const Resume = () => {
             </ul>
           </motion.div>
 
-          {/* Additional */}
           {content.additional && (
             <motion.div 
               variants={fadeInUp}

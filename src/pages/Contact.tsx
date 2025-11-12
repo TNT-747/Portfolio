@@ -1,7 +1,46 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+
+const content = {
+  en: {
+    getInTouch: "Get In Touch",
+    contactInfo: "Contact Information",
+    email: "Email",
+    location: "Location",
+    phone: "Phone",
+    socialProfiles: "Social Profiles",
+    sendMessage: "Send Me a Message",
+    name: "Name",
+    subject: "Subject",
+    message: "Message",
+    sending: "Sending...",
+    sendMessageBtn: "Send Message",
+    successMsg: "Thank you! Your message has been sent successfully.",
+    errorMsg: "There was an error sending your message. Please try again.",
+  },
+  fr: {
+    getInTouch: "Contactez-moi",
+    contactInfo: "Informations de contact",
+    email: "E-mail",
+    location: "Lieu",
+    phone: "Téléphone",
+    socialProfiles: "Profils sociaux",
+    sendMessage: "Envoyez-moi un message",
+    name: "Nom",
+    subject: "Sujet",
+    message: "Message",
+    sending: "Envoi...",
+    sendMessageBtn: "Envoyer le message",
+    successMsg: "Merci ! Votre message a été envoyé avec succès.",
+    errorMsg: "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.",
+  },
+};
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const { getInTouch, contactInfo, email, location, phone, socialProfiles, sendMessage, name, subject, message, sending, sendMessageBtn, successMsg, errorMsg } = content[language];
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,15 +60,11 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Reset states
     setIsSubmitting(true);
     setSubmitSuccess(false);
     setSubmitError(false);
     
-    // Simulate form submission (replace with actual form handling)
     setTimeout(() => {
-      // For demonstration - in real-world, connect this to a backend
-      // or email service like EmailJS, Formspree, etc.
       console.log('Form submitted:', formData);
       setIsSubmitting(false);
       setSubmitSuccess(true);
@@ -46,7 +81,7 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="text-4xl md:text-5xl font-bold mb-12 text-center"
         >
-          Get In Touch
+          {getInTouch}
         </motion.h1>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -55,7 +90,7 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+            <h2 className="text-2xl font-bold mb-6">{contactInfo}</h2>
             
             <div className="space-y-6">
               <div className="flex items-start">
@@ -65,7 +100,7 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Email</h3>
+                  <h3 className="text-lg font-semibold">{email}</h3>
                   <p className="text-gray-600 dark:text-gray-300">abdorahmankassimi12@gmail.com</p>
                 </div>
               </div>
@@ -77,7 +112,7 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Location</h3>
+                  <h3 className="text-lg font-semibold">{location}</h3>
                   <p className="text-gray-600 dark:text-gray-300">Rabat, Morocco</p>
                 </div>
               </div>
@@ -89,13 +124,13 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold">Phone</h3>
+                  <h3 className="text-lg font-semibold">{phone}</h3>
                   <p className="text-gray-600 dark:text-gray-300">+212 650 240 175</p>
                 </div>
               </div>
               
               <div className="mt-8">
-                <h3 className="text-lg font-semibold mb-4">Social Profiles</h3>
+                <h3 className="text-lg font-semibold mb-4">{socialProfiles}</h3>
                 <div className="flex flex-wrap gap-3">
                   <a href="https://linkedin.com/in/abderrahmane-kassimi" target="_blank" rel="noopener noreferrer" className="bg-primary/10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-all">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -132,11 +167,11 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl font-bold mb-6">Send Me a Message</h2>
+            <h2 className="text-2xl font-bold mb-6">{sendMessage}</h2>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium mb-1">{name}</label>
                 <input
                   type="text"
                   id="name"
@@ -149,7 +184,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium mb-1">{email}</label>
                 <input
                   type="email"
                   id="email"
@@ -162,7 +197,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-1">Subject</label>
+                <label htmlFor="subject" className="block text-sm font-medium mb-1">{subject}</label>
                 <input
                   type="text"
                   id="subject"
@@ -175,7 +210,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium mb-1">{message}</label>
                 <textarea
                   id="message"
                   name="message"
@@ -194,7 +229,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? sending : sendMessageBtn}
               </motion.button>
               
               {submitSuccess && (
@@ -203,7 +238,7 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="mt-4 p-3 bg-green-100 text-green-700 rounded-lg"
                 >
-                  Thank you! Your message has been sent successfully.
+                  {successMsg}
                 </motion.div>
               )}
               
@@ -213,7 +248,7 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="mt-4 p-3 bg-red-100 text-red-700 rounded-lg"
                 >
-                  There was an error sending your message. Please try again.
+                  {errorMsg}
                 </motion.div>
               )}
             </form>
@@ -224,4 +259,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;
