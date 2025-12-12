@@ -51,15 +51,12 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center group">
-            <motion.div 
-                whileHover={{ scale: 1.05 }} 
-                className="flex items-center"
-            >
-                <img src="/images/k.png" alt="KASSIMI Logo" className="h-10 w-10 mr-1" />
-                <span className="text-2xl font-bold text-gray-800 dark:text-white tracking-tighter">
-                    ASSIMI
-                </span>
-            </motion.div>
+          <motion.div whileHover={{ scale: 1.1 }} className="flex items-center">
+            <img src="/images/k.png" alt="KASSIMI Logo" className="h-10 w-10 mr-1" />
+            <span className="text-2xl font-bold text-gray-800 dark:text-white tracking-tighter">
+              ASSIMI
+            </span>
+          </motion.div>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-2">

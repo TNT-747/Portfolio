@@ -37,6 +37,28 @@ const Home = () => {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8"
         >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="mt-10 md:mt-0"
+          >
+            <Tilt
+              className="parallax-effect-glare-scale"
+              perspective={500}
+              glareEnable={true}
+              glareMaxOpacity={0.45}
+              scale={1.02}
+            >
+              <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-primary shadow-xl">
+                <img 
+                  src="/images/pic.png" 
+                  alt="Abderrahmane KASSIMI" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </Tilt>
+          </motion.div>
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {greeting} <span className="text-primary">{name}</span>
@@ -72,29 +94,6 @@ const Home = () => {
               </motion.div>
             </div>
           </div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mt-10 md:mt-0"
-          >
-            <Tilt
-              className="parallax-effect-glare-scale"
-              perspective={500}
-              glareEnable={true}
-              glareMaxOpacity={0.45}
-              scale={1.02}
-            >
-              <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-primary shadow-xl">
-                <img 
-                  src="/images/pic.png" 
-                  alt="Abderrahmane KASSIMI" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </Tilt>
-          </motion.div>
         </motion.div>
         <LogoCarousel />
       </div>
