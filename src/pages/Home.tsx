@@ -29,7 +29,7 @@ const Home = () => {
   const { greeting, name, title, description, viewWork, contactMe } = content[language];
 
   return (
-    <section className="relative py-20 min-h-[calc(100vh-80px)] flex items-center">
+    <section className="relative py-12 md:py-20 min-h-[calc(100vh-80px)] flex items-center">
       {/* Decorative Elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-primary-400/5 rounded-full blur-2xl animate-float pointer-events-none" style={{ willChange: 'transform' }}></div>
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent-400/5 rounded-full blur-2xl animate-float pointer-events-none" style={{ animationDelay: '2s', willChange: 'transform' }}></div>
@@ -41,7 +41,7 @@ const Home = () => {
           transition={{ duration: 0.6 }}
           className="max-w-6xl mx-auto"
         >
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Text Content */}
             <div className="order-2 md:order-1 text-center md:text-left space-y-6">
               <motion.div
@@ -49,7 +49,7 @@ const Home = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
               >
-                <p className="text-lg font-medium text-primary-600 dark:text-primary-400 mb-2">
+                <p className="text-sm md:text-lg font-medium text-primary-600 dark:text-primary-400 mb-2">
                   {greeting}
                 </p>
                 <h1 className="font-bold mb-4 leading-tight">
@@ -61,7 +61,7 @@ const Home = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200"
+                className="text-lg md:text-2xl lg:text-3xl font-semibold text-gray-700 dark:text-gray-200"
               >
                 {title}
               </motion.p>
@@ -70,7 +70,7 @@ const Home = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0"
+                className="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0"
               >
                 {description}
               </motion.p>
@@ -112,7 +112,7 @@ const Home = () => {
                   <div className="absolute inset-0 bg-gradient-primary rounded-full blur-2xl opacity-40 animate-glow"></div>
                   
                   {/* Image Container */}
-                  <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white/20 dark:border-gray-800/20 shadow-2xl backdrop-blur-sm">
+                  <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white/20 dark:border-gray-800/20 shadow-2xl backdrop-blur-sm">
                     <div className="absolute inset-0 bg-gradient-primary opacity-20"></div>
                     <img 
                       src="/images/pic.png" 
