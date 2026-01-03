@@ -142,9 +142,9 @@ const Header = () => {
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="md:hidden bg-white/90 dark:bg-gray-900/90 backdrop-blur-2xl shadow-xl border-t border-gray-200/50 dark:border-primary-500/20"
+          className="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl shadow-xl border-t border-gray-200/50 dark:border-primary-500/20 max-h-[80vh] overflow-y-auto"
         >
-          <ul className="container py-6 space-y-2">
+          <ul className="container py-4 space-y-1.5">
             {currentNavLinks.map((link, index) => (
               <motion.li 
                 key={link.path}
@@ -154,7 +154,7 @@ const Header = () => {
               >
                 <Link
                   to={link.path}
-                  className={`block py-3 px-5 rounded-xl font-semibold transition-all ${
+                  className={`block py-2.5 px-4 rounded-lg text-sm font-semibold transition-all ${
                     location.pathname === link.path
                       ? 'bg-gradient-primary text-white shadow-lg'
                       : 'text-gray-700 dark:text-gray-300 hover:bg-primary-500/10 dark:hover:bg-primary-500/20'
