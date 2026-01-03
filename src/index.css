@@ -16,11 +16,11 @@
   }
   
   h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl;
+    @apply text-4xl md:text-5xl lg:text-6xl;
   }
   
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply text-2xl md:text-3xl lg:text-4xl;
   }
 }
 
@@ -30,7 +30,7 @@
   }
   
   .btn {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95;
   }
   
   .btn-primary {
@@ -67,7 +67,7 @@
   }
   
   .card {
-    @apply bg-white/90 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl shadow-xl overflow-hidden border border-gray-200/80 dark:border-primary-500/20 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02];
+    @apply bg-white/90 dark:bg-gray-900/80 backdrop-blur-xl rounded-2xl shadow-xl overflow-hidden border border-gray-200/80 dark:border-primary-500/20 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02];
     position: relative;
   }
   
@@ -92,7 +92,7 @@
   }
   
   .section-title {
-    @apply text-4xl md:text-5xl font-bold mb-8 bg-gradient-primary bg-clip-text text-transparent text-center;
+    @apply text-3xl md:text-4xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent text-center;
   }
   
   .text-gradient {
