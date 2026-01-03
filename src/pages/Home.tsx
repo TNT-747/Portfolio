@@ -43,7 +43,7 @@ const Home = () => {
         >
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Text Content */}
-            <div className="order-2 md:order-1 text-center md:text-left space-y-6">
+            <div className="order-2 md:order-1 text-center md:text-left space-y-4 md:space-y-6 px-4 md:px-0">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -52,7 +52,7 @@ const Home = () => {
                 <p className="text-sm md:text-lg font-medium text-primary-600 dark:text-primary-400 mb-2">
                   {greeting}
                 </p>
-                <h1 className="font-bold mb-4 leading-tight">
+                <h1 className="font-bold mb-3 md:mb-4 leading-tight text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
                   <span className="text-gradient glow-text">{name}</span>
                 </h1>
               </motion.div>
@@ -61,7 +61,7 @@ const Home = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-lg md:text-2xl lg:text-3xl font-semibold text-gray-700 dark:text-gray-200"
+                className="text-base md:text-xl lg:text-2xl font-semibold text-gray-700 dark:text-gray-200"
               >
                 {title}
               </motion.p>
