@@ -357,9 +357,8 @@ const Resume = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            href="/cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={language === 'en' ? '/resume-en.pdf' : '/resume-fr.pdf'}
+            download={language === 'en' ? 'Abderrahmane_KASSIMI_Resume_EN.pdf' : 'Abderrahmane_KASSIMI_CV_FR.pdf'}
             className="btn btn-primary group"
           >
             <svg className="w-5 h-5 mr-2 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
