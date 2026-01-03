@@ -5,7 +5,6 @@ type EducationItem = {
   degree: string;
   institution: string;
   period: string;
-  grade?: string;
 };
 
 type ExperienceItem = {
@@ -17,14 +16,23 @@ type ExperienceItem = {
 
 type ProjectItem = {
   title: string;
-  period?: string;
+  period: string;
   description: string;
-  technologies?: string;
+  technologies: string;
+};
+
+type CertificationItem = {
+  name: string;
+  issuer: string;
 };
 
 type ContentType = {
   title: string;
   downloadBtn: string;
+  profile: {
+    title: string;
+    content: string;
+  };
   education: {
     title: string;
     items: EducationItem[];
@@ -39,7 +47,7 @@ type ContentType = {
       title: string;
       items: string[];
     };
-    other: {
+    soft: {
       title: string;
       items: string[];
     };
@@ -50,82 +58,77 @@ type ContentType = {
   };
   certifications: {
     title: string;
-    items: string[];
+    items: CertificationItem[];
   };
   languages: {
     title: string;
-    items: string[];
-  };
-  additional?: {
-    title: string;
-    items: string[];
+    items: { language: string; level: string }[];
   };
 };
 
 const contentData: { en: ContentType; fr: ContentType } = {
   en: {
-    title: "My Resume",
-    downloadBtn: "Download Resume (PDF)",
+    title: "Resume",
+    downloadBtn: "Download PDF",
+    profile: {
+      title: "Profile",
+      content: "5th-year engineering student at École Marocaine des Sciences de l'Ingénieur (EMSI) specializing in MIAGE, seeking a 4-6 month internship starting February 2026. Full Stack development: Java/Spring Boot, React, and Python/Django, REST APIs, SQL, and Docker. Goal: contribute to robust solutions within an Agile/Scrum team."
+    },
     education: {
       title: "Education",
       items: [
         {
-          degree: "Engineer's Degree, Computer and Network Engineering",
-          institution: "Ecole Marocaine des Sciences de l'Ingénieur, Rabat",
-          period: "October 2023 – Present"
+          degree: "Engineering Degree – Computer & Network Engineering (MIAGE Option)",
+          institution: "École Marocaine des Sciences de l'Ingénieur (EMSI), Rabat",
+          period: "Oct 2023 – Present"
         },
         {
-          degree: "Software Engineering",
-          institution: "ALX Academy",
-          period: "August 2023 – March 2025"
+          degree: "Software Engineering Certificate",
+          institution: "ALX Academy (Holberton School)",
+          period: "Aug 2023 – Mar 2025"
         },
         {
-          degree: "Digital Infrastructure, Systems and Networks",
-          institution: "Specialized Institute Of Applied Technology NTIC NTIC, Beni Mellal",
-          period: "April 2023 – May 2023"
+          degree: "Digital Infrastructure Diploma (Systems & Networks)",
+          institution: "Specialized Institute Of Applied Technology NTIC, Beni Mellal",
+          period: "Sep 2021 – May 2023"
         },
-         {
-          degree: "Bachelor's Degree, Computer and Network Maintenance",
+        {
+          degree: "Baccalaureate – Computer & Network Maintenance",
           institution: "Mohamed V Technical High School, Beni Mellal",
-          period: "September 2020 – July 2021"
-        },
-        {
-          degree: "Computer and Network Maintenance",
-          institution: "Specialized Institute Of Applied Technology NTIC NTIC, Beni Mellal",
-          period: "September 2019 – July 2021"
+          period: "Sep 2020 – Jul 2021"
         }
-       
       ]
     },
     experience: {
-      title: "Work Experience",
+      title: "Professional Experience",
       items: [
         {
-          position: "Web Developer Intern",
-          company: "Hydraulic Basin Agency of Oum Er-Rbia, Beni Mellal",
-          period: "August 2025 – September 2025",
+          position: "Full Stack Developer Intern (Django/React)",
+          company: "Agence du Bassin Hydraulique de l'Oum Er-Rbia, Beni Mellal",
+          period: "Aug 2025 – Sep 2025",
           responsibilities: [
-            "Developed a web application with interactive mapping and real-time tracking using Django and React",
-            "Integrated weather data (OpenWeatherMap API) for decision-making"
+            "Designed a hydrological monitoring web application with mapping and dashboards",
+            "Front/back integration, CRUD functionalities, and API structuring",
+            "Stack: Python, Django, React.js, SQLite, Git/GitHub"
           ]
         },
         {
-          position: "Web Developer Intern",
-          company: "National School of Commerce and Management, Beni Mellal",
-          period: "August 2024 – September 2024",
+          position: "Web Developer Intern (PHP/JavaScript)",
+          company: "École Nationale de Commerce et de Gestion (ENCG), Beni Mellal",
+          period: "Aug 2024 – Sep 2024",
           responsibilities: [
-            "Developed and improved a slot & schedule management platform",
-            "Optimized database performance and built dynamic user interfaces"
+            "Optimized and automated a timetable management platform",
+            "Improved UX and fixed functional anomalies",
+            "Stack: PHP, JavaScript, HTML5/CSS3, MySQL, XAMPP"
           ]
         },
         {
-          position: "System Administrator Intern",
-          company: "Hydraulic Basin Agency of Oum Er-Rbia, Beni Mellal",
-          period: "April 2022 – May 2022",
+          position: "Infrastructure & Networks Intern",
+          company: "Agence du Bassin Hydraulique de l'Oum Er-Rbia, Beni Mellal",
+          period: "Apr 2022 – May 2022",
           responsibilities: [
-            "Resolved a critical incident on the main server",
-            "Implemented a backup server and restored the system",
-            "Configured printers and managed user access"
+            "Assisted with system administration and IT infrastructure maintenance",
+            "Provided user support and resolved technical issues"
           ]
         }
       ]
@@ -135,129 +138,95 @@ const contentData: { en: ContentType; fr: ContentType } = {
       technical: {
         title: "Technical Skills",
         items: [
-          "Network & System Administration (Unix/Linux, Windows)",
-          "Development: Python, C++, C#, Java, JavaScript, PHP, HTML/CSS",
-          "Frameworks: Java Spring Boot, React.js, Django, Eel",
-          "Databases: Oracle, Microsoft SQL Server",
-          "SCRUM & GitHub collaboration",
-          "UML & Merise Modeling",
-          "Tools: Git, Shell, SqlPlus, SSMS, VS Code, PyCharm, Geany, VMware, Azure, PuTTY, PowerBI, IntelliJ IDEA"
+          "Backend: Java, Spring Boot, JPA/Hibernate, REST APIs",
+          "Frontend: React, JavaScript, HTML/CSS, Tailwind CSS",
+          "Python: Django, Pandas",
+          "Databases: MySQL, PostgreSQL, SQL Server, Oracle",
+          "DevOps/Cloud: Docker, Azure Fundamentals, Git/GitHub, Linux",
+          "Tools: Postman, Maven, IntelliJ IDEA, VS Code, PyCharm",
+          "Methods: UML, Merise, Agile/Scrum"
         ]
       },
-      other: {
-        title: "Other Skills",
+      soft: {
+        title: "Soft Skills",
         items: [
-          "Teamwork",
+          "Analytical Thinking",
+          "Collaborative Work",
           "Time Management",
-          "Adaptability",
-          "Problem-solving"
+          "Adaptability"
         ]
       }
     },
     projects: {
-      title: "Academic Projects",
+      title: "Key Projects",
       items: [
-       
         {
-          title: "Banking Management System",
-          period: "Jun 2025",
-          description: "Bank management system",
-          technologies: "Java, Spring"
-        },
-        {
-          title: "E-Commerce Website",
+          title: "Full Stack E-commerce Platform (Spring Boot / React, Microservices)",
           period: "May 2025 – Jul 2025",
-          description: "E-commerce platform",
-          technologies: "Java, Spring Boot"
+          description: "E-commerce solution with services, REST APIs, persistence, and front/back integration. Containerization via Docker.",
+          technologies: "Java, Spring Boot, React.js, MySQL, Docker, Maven"
         },
         {
-          title: "Cloud CDN with Azure",
-          period: "May 2025",
-          description: "Deployment of a CDN on Microsoft Azure"
+          title: "Banking Management System (Spring Boot)",
+          period: "May 2025 – Jun 2025",
+          description: "Backend for account and transaction management with REST endpoints, business rules, and persistence.",
+          technologies: "Java, Spring Boot, JPA/Hibernate, MySQL, REST"
         },
         {
-          title: "Virtualization with Master/Slave Communication",
-          period: "May 2025",
-          description: "Virtualized infrastructure with Master/Slave communication"
-        },
-         {
-          title: "Dental Office Management System (Desktop)",
+          title: "Dental Clinic Management (Java Desktop)",
           period: "Dec 2024 – Jan 2025",
-          description: "Management system for a dental office",
-          technologies: "Java, Swing"
-        },
-        {
-          title: "Restaurant Management System",
-          period: "Dec 2024 – Jan 2025",
-          description: "Restaurant management system",
-          technologies: "ASP.NET, React"
-        },
-        {
-          title: "Restaurant Management System",
-          period: "May 2024 – Jul 2024",
-          description: "Restaurant management system",
-          technologies: "Python, Eel"
+          description: "MVC desktop application for patient records and appointment management.",
+          technologies: "Java SE, Swing, JDBC, MySQL"
         }
       ]
     },
     certifications: {
       title: "Certifications",
       items: [
-        "Oracle Database Administration 2019",
-        "Microsoft Certified: Azure Fundamentals (AZ-900)",
-        "CCNA",
-        "MOS: Microsoft Office Specialist Master 2016",
-        "The Unix Workbench",
-        "Programming for Everybody (Python)"
+        { name: "Azure Fundamentals", issuer: "Microsoft" },
+        { name: "Database Administration 2019", issuer: "Oracle" },
+        { name: "CCNA", issuer: "Cisco" },
+        { name: "Unix Workbench", issuer: "Coursera" }
       ]
     },
     languages: {
       title: "Languages",
       items: [
-        "French: Fluent",
-        "English: Technical (Intermediate)",
-        "Arabic: Native"
-      ]
-    },
-    additional: {
-      title: "Additional Information",
-      items: [
-        "Driver's License: B",
-      
-        "Interests: Travel, E-sports, Cooking"
+        { language: "Arabic", level: "Native" },
+        { language: "French", level: "Professional" },
+        { language: "English", level: "Professional" }
       ]
     }
   },
   fr: {
-    title: "Mon CV",
-    downloadBtn: "Télécharger CV (PDF)",
+    title: "CV",
+    downloadBtn: "Télécharger PDF",
+    profile: {
+      title: "Profil",
+      content: "Étudiant ingénieur en 5ème année à l'École Marocaine des Sciences de l'Ingénieur (EMSI) option MIAGE, je recherche un stage PFE de 4 à 6 mois à partir de février 2026. Développement Full Stack : Java/Spring Boot, React et Python/Django, API REST, SQL et Docker. Objectif : contribuer à des solutions robustes au sein d'une équipe Agile/Scrum."
+    },
     education: {
       title: "Formation",
       items: [
         {
-          degree: "Cycles d'ingénieur en informatique et réseaux",
-          institution: "Ecole Marocaine des Sciences de l'Ingénieur, Rabat",
-          period: "Octobre 2023 – En cours"
+          degree: "Diplôme d'Ingénieur – Informatique et Réseaux (Option MIAGE)",
+          institution: "École Marocaine des Sciences de l'Ingénieur (EMSI), Rabat",
+          period: "Oct 2023 – Présent"
         },
         {
-          degree: "ALX Software Engineering",
-          institution: "ALX Academy",
+          degree: "Certificat en Génie Logiciel",
+          institution: "ALX Academy (Holberton School)",
           period: "Août 2023 – Mars 2025"
         },
         {
-          degree: "Diplôme en Infrastructure Digitale, Option Systèmes et Réseaux",
-          institution: "Institut Specialise de Technologie Appliquee NTIC, Beni Mellal",
-          period: "Avril 2023 – Mai 2023"
+          degree: "Diplôme en Infrastructure Digitale (Systèmes et Réseaux)",
+          institution: "Institut Spécialisé de Technologie Appliquée NTIC, Beni Mellal",
+          period: "Sept 2021 – Mai 2023"
         },
         {
-          degree: "Maintenance Informatique et Réseaux",
-          institution: "Institut Specialise de Technologie Appliquee NTIC, Beni Mellal",
-          period: "Septembre 2019 – Juillet 2021"
-        },
-        {
-          degree: "Baccalauréat en Maintenance Informatique et Réseaux",
+          degree: "Baccalauréat – Maintenance Informatique et Réseaux",
           institution: "Lycée Technique Mohamed V, Beni Mellal",
-          period: "Septembre 2020 – Juillet 2021"
+          period: "Sept 2020 – Juil 2021"
         }
       ]
     },
@@ -265,31 +234,32 @@ const contentData: { en: ContentType; fr: ContentType } = {
       title: "Expérience Professionnelle",
       items: [
         {
-          position: "Stagiaire Développeur Web",
-          company: "Agence du Bassin Hydraulique de l'Oum Er Rbia, Beni Mellal",
-          period: "Août 2025 – Septembre 2025",
+          position: "Stagiaire Développeur Full Stack (Django/React)",
+          company: "Agence du Bassin Hydraulique de l'Oum Er-Rbia, Beni Mellal",
+          period: "Août 2025 – Sept 2025",
           responsibilities: [
-            "Développement d’une application web intégrant une cartographie interactive et un suivi en temps réel (Django + React)",
-            "Amélioration de la prise de décision avec intégration de données météorologiques (API OpenWeatherMap)"
+            "Conception d'une application web de suivi hydrologique avec cartographie et tableaux de bord",
+            "Intégration front/back, fonctionnalités CRUD et structuration des API",
+            "Stack : Python, Django, React.js, SQLite, Git/GitHub"
           ]
         },
         {
-          position: "Stagiaire Développeur Web",
-          company: "Ecole Nationale de Commerce et de Gestion, Beni Mellal",
-          period: "Août 2024 – Septembre 2024",
+          position: "Stagiaire Développeur Web (PHP/JavaScript)",
+          company: "École Nationale de Commerce et de Gestion (ENCG), Beni Mellal",
+          period: "Août 2024 – Sept 2024",
           responsibilities: [
-            "Développement et amélioration d’une plateforme de gestion des créneaux et emplois du temps",
-            "Optimisation des bases de données et création d’interfaces dynamiques"
+            "Optimisation et automatisation d'une plateforme de gestion des emplois du temps",
+            "Amélioration de l'ergonomie et correction d'anomalies fonctionnelles",
+            "Stack : PHP, JavaScript, HTML5/CSS3, MySQL, XAMPP"
           ]
         },
         {
-          position: "Stagiaire Administrateur Système",
-          company: "Agence du Bassin Hydraulique de l'Oum Er Rbia, Beni Mellal",
+          position: "Stagiaire Infrastructure & Réseaux",
+          company: "Agence du Bassin Hydraulique de l'Oum Er-Rbia, Beni Mellal",
           period: "Avril 2022 – Mai 2022",
           responsibilities: [
-            "Résolution d’un incident critique sur le serveur principal",
-            "Mise en place d’un serveur de secours et restauration du système",
-            "Installation et configuration d’imprimantes réseau, gestion des accès utilisateurs"
+            "Assistance à l'administration système et maintenance du parc informatique",
+            "Support utilisateurs et résolution de problèmes techniques"
           ]
         }
       ]
@@ -299,290 +269,333 @@ const contentData: { en: ContentType; fr: ContentType } = {
       technical: {
         title: "Compétences Techniques",
         items: [
-          "Administration Réseau & Systèmes (Unix/Linux, Windows)",
-          "Développement : Python, C++, C#, Java, JavaScript, PHP, HTML/CSS",
-          "Frameworks : Java Spring Boot, React.js, Django, Eel",
-          "Bases de données : Oracle, Microsoft SQL Server",
-          "Méthodologies SCRUM & collaboration GitHub",
-          "Modélisation UML & Merise",
-          "Outils : Git, Shell, SqlPlus, SSMS, VS Code, PyCharm, Geany, VMware, Azure, PuTTY, PowerBI, IntelliJ IDEA"
+          "Backend : Java, Spring Boot, JPA/Hibernate, API REST",
+          "Frontend : React, JavaScript, HTML/CSS, Tailwind CSS",
+          "Python : Django, Pandas",
+          "Bases de données : MySQL, PostgreSQL, SQL Server, Oracle",
+          "DevOps/Cloud : Docker, Azure Fundamentals, Git/GitHub, Linux",
+          "Outils : Postman, Maven, IntelliJ IDEA, VS Code, PyCharm",
+          "Méthodes : UML, Merise, Agile/Scrum"
         ]
       },
-      other: {
-        title: "Soft Skills",
+      soft: {
+        title: "Compétences Interpersonnelles",
         items: [
-          "Travail en équipe",
+          "Esprit d'analyse",
+          "Travail collaboratif",
           "Gestion du temps",
-          "Adaptabilité",
-          "Résolution de problèmes"
+          "Adaptabilité"
         ]
       }
     },
     projects: {
-      title: "Projets Académiques",
+      title: "Projets Clés",
       items: [
-        
         {
-          title: "Système de Gestion Bancaire",
-          period: "Juin 2025",
-          description: "Système bancaire",
-          technologies: "Java, Spring"
-        },
-        {
-          title: "Site Web de E-Commerce",
+          title: "Plateforme E-commerce Full Stack (Spring Boot / React, Microservices)",
           period: "Mai 2025 – Juil 2025",
-          description: "Plateforme e-commerce",
-          technologies: "Java, Spring Boot"
+          description: "Solution e-commerce avec services, API REST, persistance et intégration front/back. Conteneurisation via Docker.",
+          technologies: "Java, Spring Boot, React.js, MySQL, Docker, Maven"
         },
         {
-          title: "Cloud CDN avec Azure",
-          period: "Mai 2025",
-          description: "Configuration et déploiement d’un CDN sur Microsoft Azure"
+          title: "Système de Gestion Bancaire (Spring Boot)",
+          period: "Mai 2025 – Juin 2025",
+          description: "Backend de gestion des comptes et transactions avec endpoints REST, règles métier et persistance.",
+          technologies: "Java, Spring Boot, JPA/Hibernate, MySQL, REST"
         },
         {
-          title: "Virtualisation avec Communication Master/Slave",
-          period: "Mai 2025",
-          description: "Infrastructure virtualisée avec communication Master/Slave"
-        },
-        {
-          title: "Application de Gestion d’un Cabinet Dentaire (Desktop)",
-          period: "Déc 2024 – Jan 2025",
-          description: "Système de gestion d’un cabinet dentaire",
-          technologies: "Java, Swing"
-        },
-        {
-          title: "Système de Gestion de Restaurant",
-          period: "Déc 2024 – Jan 2025",
-          description: "Système de gestion de restaurant",
-          technologies: "ASP.NET, React"
-        },
-        {
-          title: "Système de Gestion de Restaurant",
-          period: "Mai 2024 – Juil 2024",
-          description: "Système de gestion de restaurant",
-          technologies: "Python, Eel"
+          title: "Gestion de Cabinet Dentaire (Java Desktop)",
+          period: "Déc 2024 – Janv 2025",
+          description: "Application desktop MVC pour la gestion des dossiers patients et rendez-vous.",
+          technologies: "Java SE, Swing, JDBC, MySQL"
         }
       ]
     },
     certifications: {
-      title: "Certificats",
+      title: "Certifications",
       items: [
-        "Oracle Database Administration 2019",
-        "Microsoft Certified: Azure Fundamentals (AZ-900)",
-        "CCNA",
-        "MOS : Master Microsoft Office 2016",
-        "The Unix Workbench",
-        "Programming for Everybody (Python)"
+        { name: "Azure Fundamentals", issuer: "Microsoft" },
+        { name: "Database Administration 2019", issuer: "Oracle" },
+        { name: "CCNA", issuer: "Cisco" },
+        { name: "Unix Workbench", issuer: "Coursera" }
       ]
     },
     languages: {
       title: "Langues",
       items: [
-        "Français : Courant",
-        "Anglais : Technique (Intermédiaire)",
-        "Arabe : Maternelle"
-      ]
-    },
-    additional: {
-      title: "Informations Complémentaires",
-      items: [
-        "Permis de conduire : B",
-       
-        "Centres d’intérêt : Voyages, E-sports, Cuisine"
+        { language: "Arabe", level: "Maternelle" },
+        { language: "Français", level: "Professionnel" },
+        { language: "Anglais", level: "Professionnel" }
       ]
     }
-  },
+  }
 };
 
 const Resume = () => {
   const { language } = useLanguage();
   const content = contentData[language];
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
-
   return (
-    <section className="py-20">
-      <div className="container">
-        <div className="flex justify-between items-center mb-12">
+    <section className="relative py-20 min-h-screen">
+      {/* Decorative Background */}
+      <div className="absolute top-20 right-10 w-96 h-96 bg-primary-400/5 rounded-full blur-2xl pointer-events-none"></div>
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-accent-400/5 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div className="container relative z-10">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
           <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="section-title"
           >
             {content.title}
           </motion.h1>
           
           <motion.a
-            href={language === 'en' ? "resume-en.pdf" : "resume-fr.pdf"}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            href="/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-primary"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="btn btn-primary group"
           >
+            <svg className="w-5 h-5 mr-2 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
             {content.downloadBtn}
           </motion.a>
         </div>
-        
-        <div className="max-w-4xl mx-auto">
-          <motion.div 
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.2 }}
-            className="mb-12"
-            key={`education-${language}`}
+
+        <div className="max-w-6xl mx-auto space-y-16">
+          {/* Profile */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="card p-6 md:p-8 border-l-4 border-gradient-primary hover:shadow-glow transition-all"
           >
-            <h2 className="text-2xl font-bold mb-6 text-primary">{content.education.title}</h2>
-            <div className="space-y-6">
-              {content.education.items.map((item, index) => (
-                <div key={index} className="border-l-4 border-primary pl-4 py-2">
-                  <h3 className="text-xl font-bold">{item.degree}</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{item.institution}</p>
-                  <div className="flex justify-between items-center">
-                    <p className="text-gray-500 dark:text-gray-400">{item.period}</p>
-                    {item.grade && (
-                      <p className="text-primary font-medium">{item.grade}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
+            <div className="flex items-center gap-3 mb-4">
+              <svg className="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <h2 className="text-3xl md:text-4xl font-bold text-gradient">{content.profile.title}</h2>
             </div>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              {content.profile.content}
+            </p>
           </motion.div>
 
-          <motion.div 
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.3 }}
-            className="mb-12"
-            key={`experience-${language}`}
+          {/* Experience */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
           >
-            <h2 className="text-2xl font-bold mb-6 text-primary">{content.experience.title}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gradient">{content.experience.title}</h2>
             <div className="space-y-6">
               {content.experience.items.map((item, index) => (
-                <div key={index} className="border-l-4 border-primary pl-4 py-2">
-                  <h3 className="text-xl font-bold">{item.position}</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{item.company}</p>
-                  <p className="text-gray-500 dark:text-gray-400">{item.period}</p>
-                  <ul className="list-disc list-inside mt-2 text-gray-600 dark:text-gray-300">
-                    {item.responsibilities.map((resp, respIndex) => (
-                      <li key={respIndex}>{resp}</li>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
+                  className="card p-6 md:p-8 border-l-4 border-gradient-primary hover:shadow-glow transition-all"
+                >
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">{item.position}</h3>
+                  <p className="text-primary-600 dark:text-primary-400 font-medium mb-3">{item.company}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {item.period}
+                  </p>
+                  <ul className="space-y-2">
+                    {item.responsibilities.map((resp, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-gray-700 dark:text-gray-300">
+                        <span className="text-primary-600 dark:text-primary-400 mt-1.5">▸</span>
+                        <span>{resp}</span>
+                      </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
-          <motion.div 
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.4 }}
-            className="mb-12"
-            key={`skills-${language}`}
+          {/* Skills Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
           >
-            <h2 className="text-2xl font-bold mb-6 text-primary">{content.skills.title}</h2>
-            
-            <div className="mb-6">
-              <h3 className="text-xl font-bold mb-4">{content.skills.technical.title}</h3>
-              <ul className="text-gray-600 dark:text-gray-300 list-disc pl-5 space-y-2">
-                {content.skills.technical.items.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-xl font-bold mb-4">{content.skills.other.title}</h3>
-              <ul className="text-gray-600 dark:text-gray-300 list-disc pl-5 space-y-2">
-                {content.skills.other.items.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gradient">Skills</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="card p-6 md:p-8 border-l-4 border-gradient-primary hover:shadow-glow transition-all"
+              >
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                  <svg className="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                  <span className="text-gradient">{content.skills.technical.title}</span>
+                </h3>
+                <ul className="space-y-3">
+                  {content.skills.technical.items.map((skill, index) => (
+                    <li key={index} className="flex items-start gap-3 group">
+                      <div className="w-2 h-2 bg-gradient-primary rounded-full mt-2 group-hover:scale-150 transition-transform"></div>
+                      <span className="text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+                className="card p-6 md:p-8 border-l-4 border-gradient-accent hover:shadow-accent-glow transition-all"
+              >
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                  <svg className="w-7 h-7 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  <span className="text-gradient">{content.skills.soft.title}</span>
+                </h3>
+                <ul className="space-y-3">
+                  {content.skills.soft.items.map((skill, index) => (
+                    <li key={index} className="flex items-start gap-3 group">
+                      <div className="w-2 h-2 bg-gradient-accent rounded-full mt-2 group-hover:scale-150 transition-transform"></div>
+                      <span className="text-gray-700 dark:text-gray-300 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             </div>
           </motion.div>
 
-          <motion.div 
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.6 }}
-            className="mb-12"
-            key={`projects-${language}`}
+          {/* Projects */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
           >
-            <h2 className="text-2xl font-bold mb-6 text-primary">{content.projects.title}</h2>
-            <div className="space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gradient">{content.projects.title}</h2>
+            <div className="space-y-6">
               {content.projects.items.map((item, index) => (
-                <div key={index} className="border-l-4 border-primary pl-4 py-2">
-                  <h3 className="text-xl font-bold">{item.title}</h3>
-                  {item.period && <p className="text-gray-500 dark:text-gray-400">{item.period}</p>}
-                  <p className="mt-1 text-gray-600 dark:text-gray-300">{item.description}</p>
-                  {item.technologies && (
-                    <p className="mt-1 text-primary font-medium">Stack: {item.technologies}</p>
-                  )}
-                </div>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
+                  className="card p-6 md:p-8 border-l-4 border-gradient-accent hover:shadow-accent-glow transition-all"
+                >
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">{item.title}</h3>
+                  <p className="text-accent-600 dark:text-accent-400 font-medium mb-3 flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {item.period}
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">{item.description}</p>
+                  <div className="flex items-center gap-2 text-sm">
+                    <svg className="w-5 h-5 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                    <span className="font-medium text-gray-600 dark:text-gray-400">{item.technologies}</span>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
-          <motion.div 
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.6 }}
-            className="mb-12"
-            key={`certifications-${language}`}
+          {/* Education */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.1, duration: 0.6 }}
           >
-            <h2 className="text-2xl font-bold mb-6 text-primary">{content.certifications.title}</h2>
-            <ul className="text-gray-600 dark:text-gray-300 list-disc pl-5 space-y-1">
-              {content.certifications.items.map((item, index) => (
-                <li key={index}>{item}</li>
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gradient">{content.education.title}</h2>
+            <div className="space-y-6">
+              {content.education.items.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.2 + index * 0.1, duration: 0.5 }}
+                  className="card p-6 md:p-8 border-l-4 border-gradient-accent hover:shadow-accent-glow transition-all"
+                >
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">{item.degree}</h3>
+                  <p className="text-accent-600 dark:text-accent-400 font-medium flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                    </svg>
+                    {item.institution}
+                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">{item.period}</p>
+                </motion.div>
               ))}
-            </ul>
+            </div>
           </motion.div>
 
-          <motion.div 
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.6 }}
-            className="mb-12"
-            key={`languages-${language}`}
+          {/* Certifications & Languages */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.3, duration: 0.6 }}
           >
-            <h2 className="text-2xl font-bold mb-6 text-primary">{content.languages.title}</h2>
-            <ul className="text-gray-600 dark:text-gray-300 list-disc pl-5 space-y-1">
-              {content.languages.items.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </motion.div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.4, duration: 0.6 }}
+                className="card p-6 md:p-8 border-l-4 border-gradient-primary hover:shadow-glow transition-all"
+              >
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                  <svg className="w-7 h-7 text-primary-600 dark:text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-gradient">{content.certifications.title}</span>
+                </h3>
+                <ul className="space-y-4">
+                  {content.certifications.items.map((cert, index) => (
+                    <li key={index} className="group">
+                      <p className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">{cert.name}</p>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm">{cert.issuer}</p>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
 
-          {content.additional && (
-            <motion.div 
-              variants={fadeInUp}
-              initial="hidden"
-              animate="visible"
-              transition={{ delay: 0.6 }}
-              key={`additional-${language}`}
-            >
-              <h2 className="text-2xl font-bold mb-6 text-primary">{content.additional.title}</h2>
-              <ul className="text-gray-600 dark:text-gray-300 list-disc pl-5 space-y-1">
-                {content.additional.items.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </motion.div>
-          )}
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.5, duration: 0.6 }}
+                className="card p-6 md:p-8 border-l-4 border-gradient-accent hover:shadow-accent-glow transition-all"
+              >
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                  <svg className="w-7 h-7 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                  </svg>
+                  <span className="text-gradient">{content.languages.title}</span>
+                </h3>
+                <ul className="space-y-3">
+                  {content.languages.items.map((lang, index) => (
+                    <li key={index} className="flex justify-between items-center group">
+                      <span className="font-medium text-gray-900 dark:text-gray-100 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">{lang.language}</span>
+                      <span className="text-gray-600 dark:text-gray-400 text-sm">{lang.level}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

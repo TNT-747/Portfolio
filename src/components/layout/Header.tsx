@@ -43,47 +43,57 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/80 dark:bg-dark/80 backdrop-blur-lg shadow-sm py-4'
+          ? 'bg-white/70 dark:bg-gray-900/70 backdrop-blur-2xl shadow-lg shadow-gray-900/5 dark:shadow-primary-500/10 py-3 border-b border-gray-200/50 dark:border-primary-500/20'
           : 'bg-transparent py-5'
       }`}
     >
       <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center group">
-          <motion.div whileHover={{ scale: 1.1 }} className="flex items-center">
-            <img src="/images/k.png" alt="KASSIMI Logo" className="h-10 w-10 mr-1" />
-            <span className="text-2xl font-bold text-gray-800 dark:text-white tracking-tighter">
+          <motion.div 
+            whileHover={{ scale: 1.05, rotate: 5 }} 
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center"
+          >
+            <div className="relative">
+              <img src="/images/k.png" alt="KASSIMI Logo" className="h-10 w-10 mr-2 drop-shadow-lg" />
+              <div className="absolute inset-0 bg-primary-400/20 rounded-full blur-lg group-hover:bg-primary-400/40 transition-all"></div>
+            </div>
+            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent tracking-tight">
               ASSIMI
             </span>
           </motion.div>
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-2">
+        <nav className="hidden md:flex items-center space-x-1">
           {currentNavLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`relative px-3 py-2 text-sm font-medium transition-colors rounded-md ${
+              className={`relative px-4 py-2.5 text-sm font-semibold transition-all duration-300 rounded-xl group ${
                 location.pathname === link.path
-                  ? 'text-primary'
-                  : 'text-dark/80 dark:text-light/80 hover:text-primary dark:hover:text-primary'
+                  ? 'text-primary-600 dark:text-primary-400'
+                  : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
               }`}
             >
               {link.label}
               {location.pathname === link.path && (
                 <motion.div
                   layoutId="navbar-highlight"
-                  className="absolute inset-0 bg-primary/10 rounded-md"
+                  className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-primary-500/20 to-accent-500/10 rounded-xl shadow-lg"
                   style={{ zIndex: -1 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}
+              <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 bg-primary-500/5 transition-opacity"></span>
             </Link>
           ))}
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-dark dark:text-light"
+            className="ml-2 p-2.5 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 text-gray-800 dark:text-gray-100 shadow-md hover:shadow-lg transition-all"
             aria-label="Toggle dark mode"
           >
             {theme === 'dark' ? (
@@ -91,15 +101,16 @@ const Header = () => {
             ) : (
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" /></svg>
             )}
-          </button>
+          </motion.button>
           <LanguageSwitcher />
         </nav>
 
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
           <LanguageSwitcher />
-          <button
+          <motion.button
+            whileTap={{ scale: 0.95 }}
             onClick={toggleTheme}
-            className="p-2 ml-2 rounded-full bg-gray-100 dark:bg-gray-800 text-dark dark:text-light"
+            className="p-2.5 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 text-gray-800 dark:text-gray-100 shadow-md"
             aria-label="Toggle dark mode"
           >
             {theme === 'dark' ? (
@@ -107,10 +118,11 @@ const Header = () => {
             ) : (
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" /></svg>
             )}
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileTap={{ scale: 0.95 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 rounded-md text-dark dark:text-light"
+            className="p-2.5 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 text-white shadow-lg"
             aria-label="Toggle mobile menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -120,33 +132,38 @@ const Header = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
-          </button>
+          </motion.button>
         </div>
       </div>
 
       {isMobileMenuOpen && (
         <motion.nav
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden bg-white dark:bg-dark shadow-lg py-5 px-6"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          className="md:hidden bg-white/90 dark:bg-gray-900/90 backdrop-blur-2xl shadow-xl border-t border-gray-200/50 dark:border-primary-500/20"
         >
-          <ul className="space-y-4">
-            {currentNavLinks.map((link) => (
-              <li key={link.path}>
+          <ul className="container py-6 space-y-2">
+            {currentNavLinks.map((link, index) => (
+              <motion.li 
+                key={link.path}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
+              >
                 <Link
                   to={link.path}
-                  className={`block py-2 px-4 rounded ${
+                  className={`block py-3 px-5 rounded-xl font-semibold transition-all ${
                     location.pathname === link.path
-                      ? 'bg-primary/10 text-primary'
-                      : 'hover:bg-gray-100 dark:hover:bg-gray-800'
+                      ? 'bg-gradient-primary text-white shadow-lg'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-primary-500/10 dark:hover:bg-primary-500/20'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </motion.nav>

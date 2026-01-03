@@ -10,7 +10,7 @@ const content = {
     greeting: "Hi, I'm",
     name: "Abderrahmane KASSIMI",
     title: "Software Development and Information Systems Engineer",
-    description: "A passionate engineer specializing in backend development and cloud technologies, with a knack for automation (CI/CD) and building secure, high-quality applications. and I 'm always up for a challenge.",
+    description: "Passionate software engineer specializing in backend development, cloud technologies, and DevOps automation. Experienced in building scalable applications with Java, Spring Boot, and modern frameworks. Committed to delivering high-quality, secure solutions through continuous integration and best practices.",
     viewWork: "View My Work",
     contactMe: "Contact Me",
   },
@@ -18,7 +18,7 @@ const content = {
     greeting: "Bonjour, je suis",
     name: "Abderrahmane KASSIMI",
     title: "Ingénieur en Développement Logiciel et Systèmes d'Information",
-    description: "Un ingénieur passionné spécialisé dans le développement backend et les technologies cloud, avec un penchant pour l'automatisation (CI/CD) et la création d'applications sécurisées et de haute qualité. Je suis toujours prêt à relever un défi.",
+    description: "Ingénieur logiciel passionné spécialisé dans le développement backend, les technologies cloud et l'automatisation DevOps. Expérimenté dans la création d'applications évolutives avec Java, Spring Boot et les frameworks modernes. Engagé à fournir des solutions sécurisées et de haute qualité grâce à l'intégration continue et aux meilleures pratiques.",
     viewWork: "Voir mon travail",
     contactMe: "Contactez moi",
   },
@@ -29,73 +29,115 @@ const Home = () => {
   const { greeting, name, title, description, viewWork, contactMe } = content[language];
 
   return (
-    <section className="py-20">
-      <div className="container">
+    <section className="relative py-20 min-h-[calc(100vh-80px)] flex items-center">
+      {/* Decorative Elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary-400/5 rounded-full blur-2xl animate-float pointer-events-none" style={{ willChange: 'transform' }}></div>
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent-400/5 rounded-full blur-2xl animate-float pointer-events-none" style={{ animationDelay: '2s', willChange: 'transform' }}></div>
+      
+      <div className="container relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8"
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mt-10 md:mt-0"
-          >
-            <Tilt
-              className="parallax-effect-glare-scale"
-              perspective={500}
-              glareEnable={true}
-              glareMaxOpacity={0.45}
-              scale={1.02}
-            >
-              <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-primary shadow-xl">
-                <img 
-                  src="/images/pic.png" 
-                  alt="Abderrahmane KASSIMI" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </Tilt>
-          </motion.div>
-          <div className="text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              {greeting} <span className="text-primary">{name}</span>
-            </h1>
-            <p className="text-xl mb-8 text-gray-600 dark:text-gray-300">
-              {title}
-            </p>
-            <p className="text-lg mb-8 text-gray-500 dark:text-gray-400 max-w-2xl md:text-left text-center">
-              {description}
-            </p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="order-2 md:order-1 text-center md:text-left space-y-6">
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
               >
-                <Link
-                  to="/projects"
-                  className="btn btn-primary"
-                >
-                  {viewWork}
-                </Link>
+                <p className="text-lg font-medium text-primary-600 dark:text-primary-400 mb-2">
+                  {greeting}
+                </p>
+                <h1 className="font-bold mb-4 leading-tight">
+                  <span className="text-gradient glow-text">{name}</span>
+                </h1>
               </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              
+              <motion.p
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200"
               >
-                <Link
-                  to="/contact"
-                  className="btn btn-outline"
-                >
+                {title}
+              </motion.p>
+              
+              <motion.p
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0"
+              >
+                {description}
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="flex flex-wrap justify-center md:justify-start gap-4 pt-4"
+              >
+                <Link to="/projects" className="btn btn-primary group">
+                  {viewWork}
+                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <Link to="/contact" className="btn btn-outline">
                   {contactMe}
                 </Link>
               </motion.div>
             </div>
+
+            {/* Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="order-1 md:order-2 flex justify-center"
+            >
+              <Tilt
+                className="parallax-effect-glare-scale"
+                perspective={500}
+                glareEnable={true}
+                glareMaxOpacity={0.3}
+                scale={1.05}
+              >
+                <div className="relative">
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-primary rounded-full blur-2xl opacity-40 animate-glow"></div>
+                  
+                  {/* Image Container */}
+                  <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white/20 dark:border-gray-800/20 shadow-2xl backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-gradient-primary opacity-20"></div>
+                    <img 
+                      src="/images/pic.png" 
+                      alt="Abderrahmane KASSIMI" 
+                      className="w-full h-full object-cover relative z-10"
+                    />
+                  </div>
+                  
+                  {/* Decorative Ring */}
+                  <div className="absolute inset-0 rounded-full border-2 border-primary-400/30 scale-110 animate-pulse"></div>
+                </div>
+              </Tilt>
+            </motion.div>
           </div>
         </motion.div>
-        <LogoCarousel />
+        
+        {/* Logo Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="mt-20"
+        >
+          <LogoCarousel />
+        </motion.div>
       </div>
     </section>
   );

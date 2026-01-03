@@ -370,13 +370,17 @@ const Certifications = () => {
   };
 
   return (
-    <section className="py-20">
-      <div className="container">
+    <section className="relative py-20 min-h-screen">
+      {/* Decorative Background */}
+      <div className="absolute top-20 right-20 w-96 h-96 bg-primary-400/5 rounded-full blur-2xl animate-float pointer-events-none" style={{ willChange: 'transform' }}></div>
+      <div className="absolute bottom-20 left-20 w-80 h-80 bg-accent-400/5 rounded-full blur-2xl animate-float pointer-events-none" style={{ animationDelay: '3s', willChange: 'transform' }}></div>
+      
+      <div className="container relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold mb-12 text-center"
+          transition={{ duration: 0.6 }}
+          className="section-title text-center mb-16"
         >
           {myCertifications}
         </motion.h1>
@@ -385,39 +389,61 @@ const Certifications = () => {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {certifications.map((cert) => (
-            <motion.div key={cert.id} variants={item} className="card flex flex-col h-full group">
-              <div className="h-40 bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
-                <div className="w-full h-full flex items-center justify-center flex-col gap-2 p-4 text-center">
-                  <div className="w-full flex justify-center mb-1">
-                    <div className="bg-primary/20 text-primary dark:bg-primary/40 dark:text-white px-3 py-1 rounded-full text-xs font-medium">
-                      {cert.issuer}
-                    </div>
+            <motion.div 
+              key={cert.id} 
+              variants={item} 
+              className="card group flex flex-col overflow-hidden hover:scale-105 transition-transform duration-300"
+            >
+              {/* Certificate Header */}
+              <div className="relative h-48 bg-gradient-to-br from-primary-500/20 to-accent-500/20 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center flex-col gap-3 p-6 text-center bg-gradient-primary">
+                  <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
-                  <h4 className="text-lg font-bold">{cert.title}</h4>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">{cert.date}</span>
+                  <span className="text-sm font-bold text-white/90 drop-shadow-lg">{cert.issuer}</span>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Date Badge */}
+                <div className="absolute bottom-4 right-4">
+                  <span className="px-3 py-1.5 text-xs font-medium bg-white/90 dark:bg-gray-900/90 text-gray-700 dark:text-gray-300 backdrop-blur-sm rounded-full shadow-lg flex items-center gap-1">
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {cert.date}
+                  </span>
+                </div>
               </div>
-              <div className="p-5 flex-grow">
-                <h3 className="text-lg font-bold mb-1">{cert.title}</h3>
-                <p className="text-primary font-medium text-sm mb-1">{cert.issuer}</p>
-                <p className="text-gray-500 dark:text-gray-400 text-sm mb-2">{cert.date}</p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">{cert.description}</p>
-              </div>
-              <div className="p-4 pt-0 mt-auto">
-                {cert.pdfLink && (
-                  <a
-                    href={cert.pdfLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary btn-sm w-full justify-center"
-                  >
-                    {showCredential}
-                  </a>
-                )}
+
+              {/* Certificate Content */}
+              <div className="p-6 flex flex-col flex-grow bg-gradient-to-b from-transparent to-primary-50/30 dark:to-primary-950/10">
+                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-gradient transition-all">
+                  {cert.title}
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-6 flex-grow leading-relaxed text-sm">
+                  {cert.description}
+                </p>
+                
+                {/* Action Button */}
+                <div className="mt-auto">
+                  {cert.pdfLink && (
+                    <a
+                      href={cert.pdfLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary w-full py-2.5 text-sm group/btn"
+                    >
+                      <svg className="w-4 h-4 mr-2 group-hover/btn:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      {showCredential}
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
