@@ -58,16 +58,16 @@ const Home = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
               >
-                <p className="text-sm md:text-base font-medium text-primary-600 dark:text-primary-400 mb-2">
+                <p className="text-base md:text-lg font-medium text-primary-600 dark:text-primary-400 mb-2">
                   {greeting}
                 </p>
-                <h1 className="font-bold mb-3 leading-tight text-3xl md:text-4xl lg:text-5xl break-words">
+                <h1 className="font-bold mb-3 leading-tight text-4xl md:text-5xl lg:text-6xl break-words">
                   <span className="text-gradient glow-text">{name}</span>
                 </h1>
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 dark:text-gray-100 mb-2">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-3">
                   {title}
                 </h2>
-                <p className="text-base md:text-lg font-medium text-gray-600 dark:text-gray-400">
+                <p className="text-lg md:text-xl font-medium text-gray-600 dark:text-gray-400">
                   {subtitle}
                 </p>
               </motion.div>
@@ -76,7 +76,7 @@ const Home = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed"
+                className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
               >
                 {description}
               </motion.p>
