@@ -35,15 +35,14 @@ const Home = () => {
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent-400/5 rounded-full blur-2xl animate-float pointer-events-none" style={{ animationDelay: '2s', willChange: 'transform' }}></div>
       
       <div className="container relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-              {/* Text Content */}
-              <div className="order-2 md:order-1 text-center md:text-left space-y-4 md:space-y-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Text Content */}
+            <div className="order-2 md:order-1 text-center md:text-left space-y-4 md:space-y-6">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
