@@ -70,7 +70,7 @@ const Home = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-400 leading-loose max-w-2xl mx-auto md:mx-0"
+                className="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-400 leading-loose max-w-2xl mx-auto md:mx-0 text-justify"
               >
                 {description}
               </motion.p>
