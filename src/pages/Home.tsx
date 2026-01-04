@@ -43,7 +43,7 @@ const Home = () => {
         >
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Text Content */}
-            <div className="order-2 md:order-1 text-center md:text-left space-y-4 md:space-y-6 px-4 md:px-0">
+            <div className="order-2 md:order-1 text-center md:text-left space-y-4 md:space-y-6">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}

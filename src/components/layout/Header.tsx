@@ -49,7 +49,7 @@ const Header = () => {
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="container flex items-center justify-between">
         <Link to="/" className="flex items-center group flex-shrink-0">
           <motion.div 
             whileHover={{ scale: 1.05, rotate: 5 }} 
