@@ -49,18 +49,18 @@ const Header = () => {
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="container flex items-center justify-between">
-        <Link to="/" className="flex items-center group">
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        <Link to="/" className="flex items-center group flex-shrink-0">
           <motion.div 
             whileHover={{ scale: 1.05, rotate: 5 }} 
             whileTap={{ scale: 0.95 }}
             className="flex items-center"
           >
             <div className="relative">
-              <img src="/images/k.png" alt="KASSIMI Logo" className="h-10 w-10 mr-2 drop-shadow-lg" />
+              <img src="/images/k.png" alt="KASSIMI Logo" className="h-8 w-8 sm:h-10 sm:w-10 mr-1.5 sm:mr-2 drop-shadow-lg" />
               <div className="absolute inset-0 bg-primary-400/20 rounded-full blur-lg group-hover:bg-primary-400/40 transition-all"></div>
             </div>
-            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent tracking-tight">
+            <span className="text-lg sm:text-xl font-bold bg-gradient-primary bg-clip-text text-transparent tracking-tight">
               ASSIMI
             </span>
           </motion.div>
@@ -105,27 +105,27 @@ const Header = () => {
           <LanguageSwitcher />
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-1.5 sm:gap-2 md:hidden">
           <LanguageSwitcher />
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={toggleTheme}
-            className="p-2.5 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 text-gray-800 dark:text-gray-100 shadow-md"
+            className="p-2 sm:p-2.5 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 text-gray-800 dark:text-gray-100 shadow-md"
             aria-label="Toggle dark mode"
           >
             {theme === 'dark' ? (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg>
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg>
             ) : (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" /></svg>
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" /></svg>
             )}
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2.5 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 text-white shadow-lg"
+            className="p-2 sm:p-2.5 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 text-white shadow-lg"
             aria-label="Toggle mobile menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
