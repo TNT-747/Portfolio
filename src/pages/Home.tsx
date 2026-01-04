@@ -124,7 +124,7 @@ const Home = () => {
                 <a 
                   href={language === 'en' ? '/resume-en.pdf' : '/resume-fr.pdf'}
                   download={language === 'en' ? 'CV-Abderrahmane-KASSIMI-Full-Stack-Engineer-EN.pdf' : 'CV-Abderrahmane-KASSIMI-Ingenieur-Full-Stack-FR.pdf'}
-                  className="btn btn-primary group"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg shadow-sky-500/50 hover:shadow-sky-500/70 group"
                 >
                   {downloadResume}
                   <svg className="w-5 h-5 ml-2 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
