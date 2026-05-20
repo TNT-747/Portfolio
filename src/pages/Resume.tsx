@@ -103,6 +103,19 @@ const contentData: { en: ContentType; fr: ContentType } = {
       title: "Professional Experience",
       items: [
         {
+          position: "Test Automation Engineer (Python Native)",
+          company: "Capgemini – Bouygues Telecom Project",
+          period: "2025 – Present",
+          responsibilities: [
+            "Separation of automations: Processing and separation of CEM and 5GC automations (deployed in production)",
+            "CEM V2: Creation and migration to a more powerful tool (currently in testing)",
+            "Performance: Optimization of CEM automation performance (deployed in production, 80% reduction in execution time)",
+            "5GC Evolution: Implementation of concatenation rules evolution on the 5GC automation (delivered)",
+            "Internal Tool: Development of a tool enabling the configuration team to read specifications more easily (in testing)",
+            "NRM Testing (Shell Script): Creation of a Shell script enabling simultaneous billing of multiple clients (currently in client-side validation)"
+          ]
+        },
+        {
           position: "Full Stack Developer Intern (Django/React)",
           company: "Agence du Bassin Hydraulique de l'Oum Er-Rbia, Beni Mellal",
           period: "Aug 2025 – Sep 2025",
@@ -140,11 +153,12 @@ const contentData: { en: ContentType; fr: ContentType } = {
         items: [
           "Backend: Java, Spring Boot, JPA/Hibernate, REST APIs",
           "Frontend: React, JavaScript, HTML/CSS, Tailwind CSS",
-          "Python: Django, Pandas",
+          "Python: Django, Pandas, Test Automation (Native)",
           "Databases: MySQL, PostgreSQL, SQL Server, Oracle",
           "DevOps/Cloud: Docker, Azure Fundamentals, Git/GitHub, Linux",
           "Tools: Postman, Maven, IntelliJ IDEA, VS Code, PyCharm",
-          "Methods: UML, Merise, Agile/Scrum"
+          "Methods: UML, Merise, Agile/Scrum",
+          "Scripting: Shell/Bash"
         ]
       },
       soft: {
@@ -203,7 +217,7 @@ const contentData: { en: ContentType; fr: ContentType } = {
     downloadBtn: "Télécharger PDF",
     profile: {
       title: "Profil",
-      content: "Étudiant ingénieur en 5ème année à l'École Marocaine des Sciences de l'Ingénieur (EMSI) option MIAGE, je recherche un stage PFE de 4 à 6 mois à partir de février 2026. Développement Full Stack : Java/Spring Boot, React et Python/Django, API REST, SQL et Docker. Objectif : contribuer à des solutions robustes au sein d'une équipe Agile/Scrum."
+      content: "Étudiant ingénieur en 5ème année à l'École Marocaine des Sciences de l'Ingénieur (EMSI) option MIAGE, je recherche un stage PFE de 4 à 6 mois à partir de février 2026. Développement Full Stack : Java/Spring Boot, React, Python/Django, API REST, SQL et Docker. Objectif : contribuer à des solutions robustes au sein d'une équipe Agile/Scrum."
     },
     education: {
       title: "Formation",
@@ -233,6 +247,19 @@ const contentData: { en: ContentType; fr: ContentType } = {
     experience: {
       title: "Expérience Professionnelle",
       items: [
+        {
+          position: "Ingénieur Test & Automatisation (Python Natif)",
+          company: "Capgemini – Projet Bouygues Telecom",
+          period: "2025 – Présent",
+          responsibilities: [
+            "Séparation des automates : Traitement et séparation des deux automates CEM et 5GC (déployé en production)",
+            "CEM V2 : Création et migration vers un outil plus puissant (en cours de test)",
+            "Performance : Optimisation des performances de l'automate CEM (déployé en production, réduction de 80 % du temps d'exécution)",
+            "Évolution 5GC : Mise en place de l'évolution concernant les règles de concaténation sur l'automate 5GC (livrée)",
+            "Outil interne : Développement d'un outil permettant à l'équipe de paramétrage de lire plus facilement les spécifications (en cours de test)",
+            "Test NRM (Script Shell) : Création d'un script Shell permettant de facturer plusieurs clients simultanément (en cours de validation côté client)"
+          ]
+        },
         {
           position: "Stagiaire Développeur Full Stack (Django/React)",
           company: "Agence du Bassin Hydraulique de l'Oum Er-Rbia, Beni Mellal",
@@ -271,11 +298,12 @@ const contentData: { en: ContentType; fr: ContentType } = {
         items: [
           "Backend : Java, Spring Boot, JPA/Hibernate, API REST",
           "Frontend : React, JavaScript, HTML/CSS, Tailwind CSS",
-          "Python : Django, Pandas",
+          "Python : Django, Pandas, Automatisation de Tests (Natif)",
           "Bases de données : MySQL, PostgreSQL, SQL Server, Oracle",
           "DevOps/Cloud : Docker, Azure Fundamentals, Git/GitHub, Linux",
           "Outils : Postman, Maven, IntelliJ IDEA, VS Code, PyCharm",
-          "Méthodes : UML, Merise, Agile/Scrum"
+          "Méthodes : UML, Merise, Agile/Scrum",
+          "Scripting : Shell/Bash"
         ]
       },
       soft: {
@@ -359,7 +387,7 @@ const Resume = () => {
             transition={{ duration: 0.6 }}
             href={language === 'en' ? '/resume-en.pdf' : '/resume-fr.pdf'}
             download={language === 'en' ? 'CV-Abderrahmane-KASSIMI-Full-Stack-Engineer-EN.pdf' : 'CV-Abderrahmane-KASSIMI-Ingenieur-Full-Stack-FR.pdf'}
-            className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg shadow-sky-500/50 hover:shadow-sky-500/70 group"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg hover:shadow-xl"
           >
             <svg className="w-5 h-5 mr-2 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
